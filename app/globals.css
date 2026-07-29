@@ -2321,6 +2321,55 @@ img {
   overflow-wrap: break-word;
 }
 
+.cg-footer__health-text + .cg-footer__health-text,
+.cg-footer__health-text + .cg-footer__health-title,
+.cg-footer__health-title + .cg-footer__health-refs,
+.cg-footer__health-refs + .cg-footer__health-text {
+  margin-top: 6px;
+}
+
+.cg-footer__health-refs {
+  margin: 0;
+  padding-left: 1.1em;
+  color: var(--cg-muted);
+  font-size: var(--cg-type-caption);
+  font-weight: var(--fw-regular);
+  line-height: var(--cg-type-caption-lh);
+}
+
+.cg-footer__health-refs a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.cg-health-notice__refs {
+  margin-top: 8px;
+}
+
+.cg-health-notice__refs-title {
+  margin: 0 0 4px;
+  font-size: inherit;
+  font-weight: var(--fw-semibold);
+}
+
+.cg-health-notice__refs-list {
+  margin: 0;
+  padding-left: 1.1em;
+}
+
+.cg-health-notice__refs-list a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.cg-health-notice__refs-note {
+  margin: 6px 0 0;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
 .cg-footer__blog {
   display: block;
   margin: 0 0 8px;

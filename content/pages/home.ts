@@ -12,10 +12,10 @@ import type {
 export const HOME_SEO: PageSeo = {
   title: "골반필러 | 가격·후기·주의사항·병원선택 - 필러가이드",
   description:
-    "골반필러의 의미부터 가격 및 비용, 후기 확인 기준, 주의사항과 부작용, 병원선택, 유지 및 회복기간과 자주 묻는 질문을 확인합니다.",
+    "골반필러를 중심으로 힙딥필러·엉덩이필러 등 바디필러의 가격, 유지기간, 회복기간, 주의사항, 후기와 병원 선택 기준을 정리한 의료정보 가이드입니다.",
   keywords: ["골반필러", "힙딥필러", "엉덩이필러", "바디필러"],
-  ogImage: "/images/pelvic-filler/골반필러-카카오톡-OG.png",
-  socialImage: "/images/pelvic-filler/골반필러-카카오톡-OG.png",
+  ogImage: "/images/og/pelvic-filler-og.png",
+  socialImage: "/images/og/pelvic-filler-og.png",
   category: SITE.categoryLabel,
 };
 

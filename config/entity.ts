@@ -14,7 +14,7 @@ export const siteEntity: SiteEntity = {
 /** 실제 운영 주체가 확정될 때만 enabled=true */
 export const operatorEntity: OptionalEntity = {
   enabled: true,
-  name: "필러전문",
+  name: "필러가이드",
 };
 
 /** 광고주 확정 시에만 enabled=true */

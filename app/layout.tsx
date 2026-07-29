@@ -8,8 +8,6 @@ import { HOME_SEO } from "@/content/pages/home";
 import { SITE } from "@/config/site";
 import {
   buildPageMetadata,
-  DEFAULT_OG_IMAGE,
-  DEFAULT_OG_IMAGE_ALT,
   DEFAULT_OG_IMAGE_HEIGHT,
   DEFAULT_OG_IMAGE_WIDTH,
 } from "@/lib/metadata";
@@ -24,6 +22,11 @@ const pretendard = localFont({
   weight: "45 920",
   variable: "--font-ko",
 });
+
+const KAKAO_OG_IMAGE_URL =
+  "https://fillerguide.co.kr/images/og/pelvic-filler-og.png";
+const KAKAO_OG_IMAGE_ALT =
+  "골반필러 가격·후기·주의사항·병원선택 필러가이드";
 
 const baseMetadata = buildPageMetadata({
   seo: HOME_SEO,
@@ -66,10 +69,10 @@ export const metadata: Metadata = {
     description: HOME_SEO.description,
     images: [
       {
-        url: DEFAULT_OG_IMAGE,
+        url: KAKAO_OG_IMAGE_URL,
         width: DEFAULT_OG_IMAGE_WIDTH,
         height: DEFAULT_OG_IMAGE_HEIGHT,
-        alt: DEFAULT_OG_IMAGE_ALT,
+        alt: KAKAO_OG_IMAGE_ALT,
       },
     ],
   },
@@ -78,7 +81,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: HOME_SEO.title,
     description: HOME_SEO.description,
-    images: [DEFAULT_OG_IMAGE],
+    images: [KAKAO_OG_IMAGE_URL],
   },
 };
 

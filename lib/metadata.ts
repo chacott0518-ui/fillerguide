@@ -64,6 +64,9 @@ export function buildPageMetadata({
       absolute: seo.title,
     },
     description: seo.description,
+    ...(seo.keywords && seo.keywords.length > 0
+      ? { keywords: Array.from(new Set(seo.keywords)) }
+      : {}),
     category: seo.category,
     alternates: {
       canonical: url,

@@ -97,10 +97,11 @@ export function breadcrumbJsonLd(
 
 /**
  * 게시·수정일이 콘텐츠 데이터에 있을 때만 Article을 사용한다.
- * 가짜 작성자·기관 정보는 넣지 않는다.
+ * author는 Organization(필러가이드 편집팀)만 사용하며 Person·의료진 검토자를 넣지 않는다.
  */
 export function articleJsonLd(page: ContentPage) {
   const pageUrl = absoluteUrl(page.href);
+  const siteUrl = absoluteUrl("/");
   return {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -111,12 +112,22 @@ export function articleJsonLd(page: ContentPage) {
     dateModified: page.updatedAt,
     inLanguage: "ko-KR",
     articleSection: page.categoryLabel,
+    author: {
+      "@type": "Organization",
+      name: "필러가이드 편집팀",
+      url: siteUrl,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: SITE.shortName,
+      url: siteUrl,
+    },
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": pageUrl,
     },
     isPartOf: {
-      "@id": `${absoluteUrl("/")}#website`,
+      "@id": `${siteUrl}#website`,
     },
   };
 }
