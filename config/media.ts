@@ -174,10 +174,10 @@ export const HOME_FEATURE_IMAGE: ContentImage = img(
 );
 
 export const HOME_OG_IMAGE: ContentImage = img(
-  `${BASE}/골반필러-카카오톡-OG.png`,
+  "/images/og/pelvic-filler-og.png",
   "골반필러 필러가이드 공유 이미지",
-  1200,
-  630,
+  1672,
+  941,
 );
 
 export function getTopicMedia(id: ContentClusterId): TopicMedia {
