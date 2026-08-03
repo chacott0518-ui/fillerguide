@@ -45,6 +45,12 @@ export const REVIEW_PAGE: ContentPage = {
     { numberLabel: "03", title: "보정 여부", text: "조명, 자세, 필터가 결과를 과장하지 않는지 봅니다." },
     { numberLabel: "04", title: "사후 대응", text: "불편감과 경과 확인 경험이 적혀 있는지 확인합니다." },
   ],
+  hubContextLink: {
+    before: "후기만으로 판단하지 말고 제품과 가격, 주의사항 및 회복 과정을 정리한 ",
+    anchor: "골반필러 안내",
+    after: "를 함께 확인하세요.",
+    href: "/",
+  },
   seo: {
     title: "골반필러 후기는 어떤 기준으로 확인해야 할까요? | 필러가이드",
     description: "골반필러 후기와 전후 사진을 확인할 때 촬영 시점, 체형 유사성, 보정 여부와 회복 과정에서 확인할 기준을 안내합니다.",

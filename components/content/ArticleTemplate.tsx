@@ -6,6 +6,7 @@ import { ArticleBody } from "@/components/content/ArticleBody";
 import { ArticleConclusion } from "@/components/content/ArticleConclusion";
 import { ArticleIntro } from "@/components/content/ArticleIntro";
 import { FaqAccordion } from "@/components/content/FaqList";
+import { HubContextLink } from "@/components/content/HubContextLink";
 import { KeySummaryCards } from "@/components/content/KeySummaryCards";
 import { LongGuideImage } from "@/components/content/LongGuideImage";
 import {
@@ -55,7 +56,7 @@ function PageSquareThumb({
 
 /**
  * 상단 썸네일 → 목차카드 → 콘텐츠 제휴 배너 → 보조 썸네일 → 본문 이미지 → 지도
- * → H1 → 직접답변 → 핵심요약 → 번호 목차 → 본문 → FAQ → 결론 → 관련 → CTA
+ * → H1 → 직접답변 → 핵심요약 → 메인 문맥링크 → 번호 목차 → 본문 → FAQ → 결론 → 관련 → CTA
  */
 export function ArticleTemplate({ page }: ArticleTemplateProps) {
   const pageFaqs = getPageFaqs(page);
@@ -171,6 +172,10 @@ export function ArticleTemplate({ page }: ArticleTemplateProps) {
 
           {page.keySummary && page.keySummary.length > 0 ? (
             <KeySummaryCards title="핵심요약" items={page.keySummary} />
+          ) : null}
+
+          {page.hubContextLink ? (
+            <HubContextLink link={page.hubContextLink} />
           ) : null}
 
           {tocItems.length > 0 ? (

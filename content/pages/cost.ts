@@ -45,6 +45,12 @@ export const COST_PAGE: ContentPage = {
     { numberLabel: "03", title: "시술 범위", text: "골반 측면과 힙딥 중심 범위는 견적이 같지 않을 수 있습니다." },
     { numberLabel: "04", title: "추가 비용", text: "사후관리, 재확인, 추가 처치 포함 여부를 구분해 확인합니다." },
   ],
+  hubContextLink: {
+    before: "가격뿐 아니라 시술 범위와 제품, 회복 및 주의사항을 함께 확인하려면 ",
+    anchor: "골반필러 종합 안내",
+    after: "를 참고하세요.",
+    href: "/",
+  },
   seo: {
     title: "골반필러 가격과 비용은 어떻게 결정될까요? | 필러가이드",
     description: "골반필러 가격과 비용에 영향을 주는 제품, 성분, 예상 주입량, 시술 범위와 견적 확인 기준을 안내합니다.",

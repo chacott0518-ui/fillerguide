@@ -45,6 +45,12 @@ export const CAUTION_PAGE: ContentPage = {
     { numberLabel: "03", title: "활동 주의", text: "압박, 운동, 열 자극 관련 안내를 확인합니다." },
     { numberLabel: "04", title: "반응 구분", text: "일반 반응과 이상 징후를 나눠 안내받습니다." },
   ],
+  hubContextLink: {
+    before: "가격과 유지기간, 후기 및 병원선택 기준을 정리한 ",
+    anchor: "골반필러 핵심 정보",
+    after: "도 함께 확인하세요.",
+    href: "/",
+  },
   seo: {
     title: "골반필러 시술 전후 무엇을 주의해야 할까요? | 필러가이드",
     description: "골반필러 시술 전후 확인사항, 예상 가능한 반응, 주의가 필요한 이상 징후와 제품 허가사항 확인 기준을 안내합니다.",

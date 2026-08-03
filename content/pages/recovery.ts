@@ -45,6 +45,12 @@ export const RECOVERY_PAGE: ContentPage = {
     { numberLabel: "03", title: "경과 관찰", text: "제품과 개인 상태에 따라 변화 속도가 다를 수 있습니다." },
     { numberLabel: "04", title: "유지기간", text: "제품, 주입량, 생활 습관에 따라 달라질 수 있습니다." },
   ],
+  hubContextLink: {
+    before: "제품과 용량, 가격, 시술 전후 주의사항은 ",
+    anchor: "골반필러 전체 안내",
+    after: "에서 함께 확인할 수 있습니다.",
+    href: "/",
+  },
   seo: {
     title: "골반필러 유지기간과 회복기간은 얼마나 걸릴까요? | 필러가이드",
     description: "골반필러 유지기간과 회복기간에 영향을 주는 제품, 주입량, 개인 상태와 시술 후 활동 관련 확인사항을 안내합니다.",

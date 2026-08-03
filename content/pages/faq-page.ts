@@ -60,6 +60,12 @@ export const FAQ_PAGE: ContentPage = {
     { numberLabel: "03", title: "운동과 회복", text: "활동 재개는 의료진 안내를 우선합니다." },
     { numberLabel: "04", title: "제거와 병원선택", text: "제거 가능성과 대응 체계는 상담에서 확인해야 합니다." },
   ],
+  hubContextLink: {
+    before: "질문별 답변과 함께 가격, 후기, 주의사항과 회복 내용을 정리한 ",
+    anchor: "골반필러 종합 안내",
+    after: "도 확인하세요.",
+    href: "/",
+  },
   seo: {
     title: "골반필러에 대해 자주 묻는 질문은 무엇일까요? | 필러가이드",
     description: "골반필러 가격, 통증, 붓기, 운동, 앉기, 유지기간, 필러 제거와 병원선택에 관한 자주 묻는 질문을 정리합니다.",

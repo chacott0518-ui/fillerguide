@@ -201,8 +201,17 @@ export type ContentPage = {
   showFaqHub?: boolean;
   /** 페이지 핵심요약 카드 */
   keySummary?: KeySummaryEntry[];
+  /** 메인 `/` 허브로 연결하는 본문 문맥링크 (핵심요약 다음·목차 전) */
+  hubContextLink?: HubContextLink;
   /** 번호형 목차 짧은 설명 (id → description) */
   tocDescriptions?: Record<string, string>;
+};
+
+export type HubContextLink = {
+  before: string;
+  anchor: string;
+  after: string;
+  href: "/";
 };
 
 export type KeySummaryEntry = {

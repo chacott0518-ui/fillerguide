@@ -45,6 +45,12 @@ export const HOSPITAL_PAGE: ContentPage = {
     { numberLabel: "03", title: "대응 체계", text: "이상 반응 시 대응 방법이 있는지 봅니다." },
     { numberLabel: "04", title: "사후 경과", text: "재확인 일정과 정품·정량 절차를 확인합니다." },
   ],
+  hubContextLink: {
+    before: "병원을 비교하기 전에 제품, 가격, 후기와 회복 기준을 정리한 ",
+    anchor: "골반필러 종합 정보",
+    after: "를 확인하세요.",
+    href: "/",
+  },
   seo: {
     title: "골반필러 병원은 어떤 기준으로 선택해야 할까요? | 필러가이드",
     description: "골반필러 병원선택 시 제품 정보, 의료진 설명, 주입 계획, 이상 반응 대응과 사후관리 체계를 확인하는 기준을 안내합니다.",

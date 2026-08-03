@@ -701,7 +701,8 @@ img {
 .cg-home-intro__link a,
 .cg-article-section__link a,
 .cg-faq-item__link a,
-.cg-related-link a {
+.cg-related-link a,
+.cg-hub-context-link__a {
   color: var(--cg-link);
   font-weight: 600;
   text-decoration: none;
@@ -710,17 +711,34 @@ img {
 .cg-home-intro__link a:hover,
 .cg-article-section__link a:hover,
 .cg-faq-item__link a:hover,
-.cg-related-link a:hover {
+.cg-related-link a:hover,
+.cg-hub-context-link__a:hover {
   color: var(--cg-link-hover);
 }
 
 .cg-home-intro__link a:focus-visible,
 .cg-article-section__link a:focus-visible,
 .cg-faq-item__link a:focus-visible,
-.cg-related-link a:focus-visible {
+.cg-related-link a:focus-visible,
+.cg-hub-context-link__a:focus-visible {
   outline: 2px solid var(--cg-link);
   outline-offset: 2px;
   box-shadow: 0 0 0 4px var(--cg-link-focus);
+}
+
+.cg-hub-context-link {
+  margin: 16px 0 20px;
+  color: var(--cg-ink);
+  font-size: var(--cg-type-body, 1rem);
+  font-weight: var(--fw-regular);
+  line-height: 1.7;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+.cg-hub-context-link__a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 .cg-content-index {
