@@ -30,8 +30,8 @@ function formatDisplayDate(iso: string): string {
 }
 
 /**
- * 신버전 정보형 아티클 템플릿.
- * 기존 ArticleTemplate(핵심 6페이지)와 분리한다.
+ * 신버전 정보형 아티클 템플릿 (레이아웃 전용).
+ * 기존 ArticleTemplate·핵심 6페이지와 분리한다.
  */
 export function InfoGuideTemplate({ guide }: InfoGuideTemplateProps) {
   assertOfficialSources(guide);
@@ -62,7 +62,7 @@ export function InfoGuideTemplate({ guide }: InfoGuideTemplateProps) {
 
   return (
     <>
-      <article className="cg-info-guide cg-page--enter">
+      <article className="cg-info-guide cg-info-guide--v2 cg-page--enter">
         <div className="cg-container">
           <Breadcrumb
             items={[
@@ -71,63 +71,80 @@ export function InfoGuideTemplate({ guide }: InfoGuideTemplateProps) {
             ]}
           />
 
-          <header className="cg-info-guide__header">
-            <p className="cg-info-guide__eyebrow">{guide.categoryLabel}</p>
-            <h1 className="cg-info-guide__h1">{guide.h1}</h1>
-            <p className="cg-info-guide__dates">
-              <span>발행 {formatDisplayDate(guide.publishedAt)}</span>
-              <span aria-hidden="true"> · </span>
-              <span>수정 {formatDisplayDate(guide.updatedAt)}</span>
-            </p>
-          </header>
+          <div className="cg-info-guide__reading">
+            <header className="cg-info-guide__header">
+              <p className="cg-info-guide__eyebrow">{guide.categoryLabel}</p>
+              <h1 className="cg-info-guide__h1">{guide.h1}</h1>
+              <p className="cg-info-guide__dates">
+                <span>발행 {formatDisplayDate(guide.publishedAt)}</span>
+                <span aria-hidden="true"> · </span>
+                <span>수정 {formatDisplayDate(guide.updatedAt)}</span>
+              </p>
+            </header>
 
-          <section className="cg-info-guide__intro" aria-label="도입">
-            {guide.intro.map((paragraph) => (
-              <p key={paragraph.slice(0, 40)}>{paragraph}</p>
-            ))}
-          </section>
-
-          <KeySummaryCards
-            title={guide.firstCheckTitle}
-            items={guide.firstCheckItems}
-          />
-
-          <ArticleBody sections={guide.sections} />
-
-          <FaqAccordion
-            items={guide.faqs}
-            title={guide.faqTitle}
-            id="faq"
-            numberLabel="08"
-            className="cg-info-guide__faq"
-          />
-
-          <nav
-            className="cg-info-guide__related"
-            aria-labelledby="info-guide-related-title"
-          >
-            <h2
-              id="info-guide-related-title"
-              className="cg-info-guide__related-title"
-            >
-              관련 정보
-            </h2>
-            <ul className="cg-info-guide__related-list">
-              {guide.relatedLinks.map((item) => (
-                <li key={item.id}>
-                  <Link href={item.href} className="cg-info-guide__related-link">
-                    {item.anchor}
-                  </Link>
-                </li>
+            <section className="cg-info-guide__intro" aria-label="도입">
+              {guide.intro.map((paragraph) => (
+                <p key={paragraph.slice(0, 40)}>{paragraph}</p>
               ))}
-            </ul>
-          </nav>
+            </section>
 
-          <aside className="cg-info-guide__notice" role="note">
-            <p>{guide.medicalNotice}</p>
-          </aside>
+            <div className="cg-info-guide__first-check">
+              <KeySummaryCards
+                title={guide.firstCheckTitle}
+                items={guide.firstCheckItems}
+              />
+            </div>
 
-          <OfficialSources sources={guide.officialSources} />
+            <div className="cg-info-guide__body" data-article-body="true">
+              <ArticleBody sections={guide.sections} />
+
+              <FaqAccordion
+                items={guide.faqs}
+                title={guide.faqTitle}
+                id="faq"
+                numberLabel="08"
+                className="cg-info-guide__faq"
+              />
+
+              <nav
+                className="cg-info-guide__related"
+                aria-labelledby="info-guide-related-title"
+              >
+                <h2
+                  id="info-guide-related-title"
+                  className="cg-info-guide__related-title"
+                >
+                  관련 정보
+                </h2>
+                <ul className="cg-info-guide__related-list">
+                  {guide.relatedLinks.map((item) => (
+                    <li key={item.id}>
+                      <Link
+                        href={item.href}
+                        className="cg-info-guide__related-row"
+                      >
+                        <span className="cg-info-guide__related-label">
+                          {item.anchor}
+                        </span>
+                        <span
+                          className="cg-info-guide__related-arrow"
+                          aria-hidden="true"
+                        >
+                          →
+                        </span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+
+              <aside className="cg-info-guide__notice" role="note">
+                <p>{guide.medicalNotice}</p>
+              </aside>
+
+              <OfficialSources sources={guide.officialSources} />
+            </div>
+          </div>
         </div>
       </article>
       <JsonLd data={schemas} />
