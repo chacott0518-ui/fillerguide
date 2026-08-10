@@ -1,4 +1,5 @@
 import { SITE } from "@/config/site";
+import { INFO_GUIDES } from "@/content/info-guides";
 import { CONTENT_PAGES } from "@/content/pages";
 import { HOME_SEO } from "@/content/pages/home";
 import { absoluteUrl } from "@/lib/site-url";
@@ -14,12 +15,19 @@ function escapeXml(value: string): string {
     .replace(/'/g, "&apos;");
 }
 
-function toRfc822(isoDate: string): string {
-  return new Date(`${isoDate}T00:00:00.000Z`).toUTCString();
+function toRfc822(value: string): string {
+  if (/^\d{4}-\d{2}-\d{2}$/.test(value)) {
+    return new Date(`${value}T00:00:00.000Z`).toUTCString();
+  }
+  const parsed = new Date(value);
+  if (Number.isNaN(parsed.getTime())) {
+    return new Date(`${value.slice(0, 10)}T00:00:00.000Z`).toUTCString();
+  }
+  return parsed.toUTCString();
 }
 
 /**
- * 공개 URL 7개 description 기반 RSS 2.0.
+ * 공개 URL description 기반 RSS 2.0.
  * 본문 HTML은 임의 생성하지 않는다.
  */
 export function GET() {
@@ -40,6 +48,16 @@ export function GET() {
         link,
         guid: link,
         pubDate: page.publishedAt || page.updatedAt,
+      };
+    }),
+    ...INFO_GUIDES.map((guide) => {
+      const link = absoluteUrl(guide.href);
+      return {
+        title: guide.seo.title,
+        description: guide.seo.description,
+        link,
+        guid: link,
+        pubDate: guide.publishedAt,
       };
     }),
   ];

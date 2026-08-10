@@ -5,6 +5,7 @@ import { ArticleBody } from "@/components/content/ArticleBody";
 import { ArticleConclusion } from "@/components/content/ArticleConclusion";
 import { HomeContentCards } from "@/components/content/ContentCardGrid";
 import { FaqAccordion } from "@/components/content/FaqList";
+import { InfoGuideLayer } from "@/components/content/InfoGuideLayer";
 import { KeySummaryCards } from "@/components/content/KeySummaryCards";
 import { PageTocCards } from "@/components/content/PageTocCards";
 import { RelatedPages } from "@/components/content/RelatedPages";
@@ -51,6 +52,8 @@ export default function HomePage() {
       <div className="cg-home cg-page--enter">
         <div className="cg-container">
           <HomeContentCards />
+
+          <InfoGuideLayer />
 
           <div className="cg-article-mid-cta">
             <PartnershipCTA variant="top" />

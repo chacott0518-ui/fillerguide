@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import { ContentPageView } from "@/components/content/ContentPageView";
+import { InfoGuideTemplate } from "@/components/content/InfoGuideTemplate";
+import { getInfoGuideBySlug, INFO_GUIDES } from "@/content/info-guides";
 import {
   CONTENT_PAGES,
   getContentPageBySlug,
@@ -21,7 +23,10 @@ function normalizeSlug(rawSlug: string): string {
 }
 
 export function generateStaticParams() {
-  return CONTENT_PAGES.map((page) => ({ slug: page.slug }));
+  return [
+    ...CONTENT_PAGES.map((page) => ({ slug: page.slug })),
+    ...INFO_GUIDES.map((guide) => ({ slug: guide.slug })),
+  ];
 }
 
 export const dynamicParams = false;
@@ -29,24 +34,40 @@ export const dynamicParams = false;
 export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
-  const { slug: rawSlug } = await params;
-  const page = getContentPageBySlug(normalizeSlug(rawSlug));
+  const slug = normalizeSlug((await params).slug);
+  const contentPage = getContentPageBySlug(slug);
 
-  if (!page) return {};
+  if (contentPage) {
+    return buildPageMetadata({
+      seo: contentPage.seo,
+      path: contentPage.href,
+      publishedTime: contentPage.publishedAt,
+      modifiedTime: contentPage.updatedAt,
+    });
+  }
+
+  const guide = getInfoGuideBySlug(slug);
+  if (!guide) return {};
 
   return buildPageMetadata({
-    seo: page.seo,
-    path: page.href,
-    publishedTime: page.publishedAt,
-    modifiedTime: page.updatedAt,
+    seo: guide.seo,
+    path: guide.href,
+    type: "article",
+    publishedTime: guide.publishedAt,
+    modifiedTime: guide.updatedAt,
   });
 }
 
 export default async function ContentSlugPage({ params }: PageProps) {
-  const { slug: rawSlug } = await params;
-  const page = getContentPageBySlug(normalizeSlug(rawSlug));
+  const slug = normalizeSlug((await params).slug);
+  const contentPage = getContentPageBySlug(slug);
 
-  if (!page) notFound();
+  if (contentPage) {
+    return <ContentPageView page={contentPage} />;
+  }
 
-  return <ContentPageView page={page} />;
+  const guide = getInfoGuideBySlug(slug);
+  if (!guide) notFound();
+
+  return <InfoGuideTemplate guide={guide} />;
 }

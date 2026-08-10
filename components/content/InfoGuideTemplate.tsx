@@ -1,0 +1,136 @@
+import Link from "next/link";
+
+import { ArticleBody } from "@/components/content/ArticleBody";
+import { Breadcrumb } from "@/components/content/Breadcrumb";
+import { FaqAccordion } from "@/components/content/FaqList";
+import { KeySummaryCards } from "@/components/content/KeySummaryCards";
+import { OfficialSources } from "@/components/content/OfficialSources";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { ROUTES } from "@/config/routes";
+import { SITE } from "@/config/site";
+import {
+  articleJsonLdFromFields,
+  breadcrumbJsonLd,
+  faqPageJsonLd,
+  webPageJsonLd,
+} from "@/lib/schema";
+import { assertOfficialSources, type InfoGuide } from "@/types/info-guide";
+
+type InfoGuideTemplateProps = {
+  guide: InfoGuide;
+};
+
+function formatDisplayDate(iso: string): string {
+  const date = new Date(iso);
+  if (Number.isNaN(date.getTime())) return iso.slice(0, 10);
+  const y = date.getFullYear();
+  const m = String(date.getMonth() + 1).padStart(2, "0");
+  const d = String(date.getDate()).padStart(2, "0");
+  return `${y}.${m}.${d}`;
+}
+
+/**
+ * 신버전 정보형 아티클 템플릿.
+ * 기존 ArticleTemplate(핵심 6페이지)와 분리한다.
+ */
+export function InfoGuideTemplate({ guide }: InfoGuideTemplateProps) {
+  assertOfficialSources(guide);
+
+  const schemas = [
+    webPageJsonLd({
+      name: guide.h1,
+      description: guide.seo.description,
+      path: guide.href,
+      image: guide.seo.socialImage || guide.seo.ogImage,
+      type: "WebPage",
+    }),
+    breadcrumbJsonLd([
+      { name: SITE.shortName, path: ROUTES.home },
+      { name: guide.h1, path: guide.href },
+    ]),
+    articleJsonLdFromFields({
+      headline: guide.h1,
+      description: guide.seo.description,
+      path: guide.href,
+      image: guide.seo.socialImage || guide.seo.ogImage,
+      datePublished: guide.publishedAt,
+      dateModified: guide.updatedAt,
+      articleSection: guide.categoryLabel,
+    }),
+    faqPageJsonLd(guide.faqs, guide.href),
+  ];
+
+  return (
+    <>
+      <article className="cg-info-guide cg-page--enter">
+        <div className="cg-container">
+          <Breadcrumb
+            items={[
+              { label: "골반필러", href: ROUTES.home },
+              { label: guide.preview.title },
+            ]}
+          />
+
+          <header className="cg-info-guide__header">
+            <p className="cg-info-guide__eyebrow">{guide.categoryLabel}</p>
+            <h1 className="cg-info-guide__h1">{guide.h1}</h1>
+            <p className="cg-info-guide__dates">
+              <span>발행 {formatDisplayDate(guide.publishedAt)}</span>
+              <span aria-hidden="true"> · </span>
+              <span>수정 {formatDisplayDate(guide.updatedAt)}</span>
+            </p>
+          </header>
+
+          <section className="cg-info-guide__intro" aria-label="도입">
+            {guide.intro.map((paragraph) => (
+              <p key={paragraph.slice(0, 40)}>{paragraph}</p>
+            ))}
+          </section>
+
+          <KeySummaryCards
+            title={guide.firstCheckTitle}
+            items={guide.firstCheckItems}
+          />
+
+          <ArticleBody sections={guide.sections} />
+
+          <FaqAccordion
+            items={guide.faqs}
+            title={guide.faqTitle}
+            id="faq"
+            numberLabel="08"
+            className="cg-info-guide__faq"
+          />
+
+          <nav
+            className="cg-info-guide__related"
+            aria-labelledby="info-guide-related-title"
+          >
+            <h2
+              id="info-guide-related-title"
+              className="cg-info-guide__related-title"
+            >
+              관련 정보
+            </h2>
+            <ul className="cg-info-guide__related-list">
+              {guide.relatedLinks.map((item) => (
+                <li key={item.id}>
+                  <Link href={item.href} className="cg-info-guide__related-link">
+                    {item.anchor}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          <aside className="cg-info-guide__notice" role="note">
+            <p>{guide.medicalNotice}</p>
+          </aside>
+
+          <OfficialSources sources={guide.officialSources} />
+        </div>
+      </article>
+      <JsonLd data={schemas} />
+    </>
+  );
+}

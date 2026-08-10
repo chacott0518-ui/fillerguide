@@ -1,4 +1,5 @@
 import { getFaqsByIds } from "@/content/faqs";
+import { INFO_GUIDES } from "@/content/info-guides";
 import {
   ALL_PAGE_HREFS,
   CONTENT_CARDS,
@@ -26,5 +27,8 @@ export function getPageFaqs(page: ContentPage): FaqItem[] {
 }
 
 export function getPublicUrls(): string[] {
-  return [...ALL_PAGE_HREFS];
+  return [
+    ...ALL_PAGE_HREFS,
+    ...INFO_GUIDES.map((guide) => guide.href),
+  ];
 }

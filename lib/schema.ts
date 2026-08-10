@@ -99,19 +99,29 @@ export function breadcrumbJsonLd(
  * 게시·수정일이 콘텐츠 데이터에 있을 때만 Article을 사용한다.
  * author는 Organization(필러가이드 편집팀)만 사용하며 Person·의료진 검토자를 넣지 않는다.
  */
-export function articleJsonLd(page: ContentPage) {
-  const pageUrl = absoluteUrl(page.href);
+export function articleJsonLdFromFields(options: {
+  headline: string;
+  description: string;
+  path: string;
+  image?: string;
+  datePublished: string;
+  dateModified: string;
+  articleSection?: string;
+}) {
+  const pageUrl = absoluteUrl(options.path);
   const siteUrl = absoluteUrl("/");
   return {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: page.heading,
-    description: page.seo.description,
-    image: absoluteUrl(page.seo.socialImage || DEFAULT_OG_IMAGE),
-    datePublished: page.publishedAt,
-    dateModified: page.updatedAt,
+    headline: options.headline,
+    description: options.description,
+    image: absoluteUrl(options.image || DEFAULT_OG_IMAGE),
+    datePublished: options.datePublished,
+    dateModified: options.dateModified,
     inLanguage: "ko-KR",
-    articleSection: page.categoryLabel,
+    ...(options.articleSection
+      ? { articleSection: options.articleSection }
+      : {}),
     author: {
       "@type": "Organization",
       name: "필러가이드 편집팀",
@@ -130,6 +140,18 @@ export function articleJsonLd(page: ContentPage) {
       "@id": `${siteUrl}#website`,
     },
   };
+}
+
+export function articleJsonLd(page: ContentPage) {
+  return articleJsonLdFromFields({
+    headline: page.heading,
+    description: page.seo.description,
+    path: page.href,
+    image: page.seo.socialImage || DEFAULT_OG_IMAGE,
+    datePublished: page.publishedAt,
+    dateModified: page.updatedAt,
+    articleSection: page.categoryLabel,
+  });
 }
 
 export function faqPageJsonLd(items: FaqItem[], path: string = ROUTES.faq) {

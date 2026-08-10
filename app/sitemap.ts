@@ -1,11 +1,12 @@
 import type { MetadataRoute } from "next";
 
+import { INFO_GUIDES } from "@/content/info-guides";
 import { CONTENT_PAGES } from "@/content/pages";
 import { absoluteUrl } from "@/lib/site-url";
 
 const HOME_LAST_MODIFIED = "2026-07-28";
 
-/** 색인 대상: 홈 + 대표 콘텐츠 6개(총 7). redirect·칼럼 URL 제외 */
+/** 색인 대상: 홈 + 대표 콘텐츠 6개 + 정보 가이드. redirect·칼럼 URL 제외 */
 export default function sitemap(): MetadataRoute.Sitemap {
   const home: MetadataRoute.Sitemap = [
     {
@@ -23,5 +24,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [...home, ...pages];
+  const guides: MetadataRoute.Sitemap = INFO_GUIDES.map((guide) => ({
+    url: absoluteUrl(guide.href),
+    lastModified: new Date(guide.updatedAt),
+    changeFrequency: "monthly",
+    priority: 0.7,
+  }));
+
+  return [...home, ...pages, ...guides];
 }
