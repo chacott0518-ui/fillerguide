@@ -5305,6 +5305,16 @@ img {
   font-weight: 600;
 }
 
+.cg-info-layer__all {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  margin-top: 12px;
+  color: var(--cg-link);
+  font-size: var(--cg-type-caption);
+  font-weight: 700;
+}
+
 .cg-info-guide {
   --ig-radius-lg: 18px;
   --ig-radius-md: 14px;
@@ -5414,15 +5424,21 @@ img {
 .cg-info-guide__first-check .cg-key-summary__grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 10px;
+  gap: 8px;
 }
 
 .cg-info-guide__first-check .cg-key-summary__card {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-areas:
+    "num title"
+    "text text";
+  column-gap: 6px;
+  row-gap: 2px;
+  height: auto;
+  min-height: 0;
   min-width: 0;
-  padding: 14px 16px 16px;
+  padding: 10px 12px;
   border: 1px solid var(--ig-line);
   border-radius: var(--ig-radius-sm);
   background: var(--ig-surface);
@@ -5430,11 +5446,13 @@ img {
 }
 
 .cg-info-guide__first-check .cg-key-summary__num {
+  grid-area: num;
+  align-self: baseline;
   color: var(--cg-link);
   font-size: var(--cg-type-caption);
   font-weight: 700;
-  letter-spacing: 0.06em;
-  line-height: var(--cg-type-caption-lh);
+  letter-spacing: 0.02em;
+  line-height: var(--cg-type-h4-lh);
 }
 
 .cg-info-guide__first-check .cg-key-summary__title,
@@ -5447,6 +5465,8 @@ img {
 }
 
 .cg-info-guide__first-check .cg-key-summary__title {
+  grid-area: title;
+  align-self: baseline;
   color: var(--cg-ink);
   font-size: var(--cg-type-h4);
   font-weight: var(--fw-bold);
@@ -5454,10 +5474,11 @@ img {
 }
 
 .cg-info-guide__first-check .cg-key-summary__text {
+  grid-area: text;
   margin: 0;
   color: var(--cg-body);
   font-size: var(--cg-type-card-body);
-  line-height: 1.55;
+  line-height: 1.5;
 }
 
 /* 본문 섹션 리듬 */
@@ -5664,6 +5685,101 @@ img {
   line-height: 1.7;
 }
 
+/* 다른 골반필러 의료정보 (하단 관련글 카드) */
+.cg-related-guides {
+  margin: clamp(22px, 3.2vw, 36px) 0 0;
+}
+
+.cg-related-guides__title {
+  margin: 0 0 10px;
+  color: var(--cg-ink);
+  font-size: var(--cg-type-h3);
+  font-weight: var(--fw-bold);
+  line-height: var(--cg-type-h3-lh);
+}
+
+.cg-related-guides__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin: 0 0 12px;
+  padding: 0;
+  list-style: none;
+}
+
+.cg-related-guides__card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  height: auto;
+  min-height: 0;
+  padding: 10px 12px;
+  border: 1px solid var(--ig-line);
+  border-radius: var(--ig-radius-sm);
+  background: var(--ig-surface);
+  color: var(--cg-ink);
+  text-decoration: none;
+  transition: border-color 160ms ease, background-color 160ms ease;
+}
+
+.cg-related-guides__card:hover,
+.cg-related-guides__card:focus-visible {
+  border-color: color-mix(in srgb, var(--cg-link) 40%, var(--ig-line));
+  background: color-mix(in srgb, var(--cg-link) 6%, var(--cg-surface));
+}
+
+.cg-related-guides__card-title {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-size: var(--cg-type-card-body);
+  font-weight: 600;
+  line-height: 1.4;
+  word-break: keep-all;
+}
+
+.cg-related-guides__card-desc {
+  display: none;
+  color: var(--cg-muted);
+  font-size: 0.8rem;
+  line-height: 1.4;
+  word-break: keep-all;
+}
+
+.cg-related-guides__back {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 12px;
+  border: 1px solid var(--ig-line);
+  border-radius: 999px;
+  color: var(--cg-link);
+  font-size: var(--cg-type-caption);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.cg-related-guides__back:hover,
+.cg-related-guides__back:focus-visible {
+  border-color: color-mix(in srgb, var(--cg-link) 40%, var(--ig-line));
+  background: color-mix(in srgb, var(--cg-link) 6%, var(--cg-surface));
+}
+
+@media (min-width: 640px) {
+  .cg-related-guides__card-desc {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+@media (min-width: 900px) {
+  .cg-related-guides__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
 /* 관련 정보 */
 .cg-info-guide__related {
   margin: clamp(22px, 3.2vw, 36px) 0 0;
@@ -5833,15 +5949,247 @@ img {
 
 @media (max-width: 900px) {
   .cg-info-guide__first-check .cg-key-summary__card {
-    display: flex;
-    flex-direction: column;
-    grid-template-columns: none;
-    grid-template-areas: none;
+    padding: 10px 12px;
+  }
+}
+
+/* 정보형 아티클 — compact 목차 (먼저 확인할 내용과 본문 사이) */
+.cg-info-guide__toc {
+  margin: 0 0 clamp(20px, 3vw, 32px);
+}
+
+.cg-info-guide__toc .cg-page-toc {
+  margin: 0;
+}
+
+.cg-info-guide__toc .cg-page-toc__heading {
+  margin: 0 0 10px;
+  font-size: var(--cg-type-h4);
+  line-height: var(--cg-type-h4-lh);
+}
+
+.cg-info-guide__toc .cg-page-toc__grid {
+  gap: 6px;
+}
+
+.cg-info-guide__toc .cg-page-toc__card {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 10px 12px;
+  min-height: 0;
+}
+
+.cg-info-guide__toc .cg-page-toc__num {
+  flex-shrink: 0;
+  color: var(--cg-link);
+  font-size: 0.8em;
+}
+
+.cg-info-guide__toc .cg-page-toc__label {
+  font-size: var(--cg-type-card-body);
+  word-break: keep-all;
+}
+
+@media (min-width: 640px) {
+  .cg-info-guide__toc .cg-page-toc__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* =============================================
+   /의료정보 허브
+   ============================================= */
+.cg-info-hub {
+  padding: 16px 0 56px;
+  background: var(--cg-canvas);
+  color: var(--cg-body);
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+.cg-info-hub__header {
+  margin: 12px 0 clamp(18px, 3vw, 28px);
+  max-width: 42rem;
+}
+
+.cg-info-hub__eyebrow {
+  margin: 0 0 8px;
+  color: var(--cg-link);
+  font-size: var(--cg-type-caption);
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.04em;
+}
+
+.cg-info-hub__h1 {
+  margin: 0 0 10px;
+  color: var(--cg-ink);
+  font-size: var(--cg-type-h2);
+  font-weight: var(--fw-bold);
+  line-height: var(--cg-type-h2-lh);
+  word-break: keep-all;
+}
+
+.cg-info-hub__lead {
+  margin: 0;
+  color: var(--cg-body);
+  font-size: var(--cg-type-body, 1rem);
+  line-height: 1.7;
+}
+
+.cg-info-hub__tabs {
+  position: relative;
+  margin: 0 0 clamp(14px, 2.4vw, 20px);
+}
+
+.cg-info-hub__tabs-track {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 2px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  white-space: nowrap;
+}
+
+.cg-info-hub__tabs-track::-webkit-scrollbar {
+  display: none;
+}
+
+.cg-info-hub__tabs-fade {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 2px;
+  width: 32px;
+  background: linear-gradient(to right, transparent, var(--cg-canvas));
+  pointer-events: none;
+}
+
+.cg-info-hub__tab {
+  flex-shrink: 0;
+  min-height: 38px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--cg-line-soft, var(--cg-line));
+  background: var(--cg-surface);
+  color: var(--cg-body);
+  font-size: var(--cg-type-caption);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.cg-info-hub__tab.is-active {
+  border-color: var(--cg-link);
+  background: color-mix(in srgb, var(--cg-link) 12%, var(--cg-surface));
+  color: var(--cg-link);
+}
+
+.cg-info-hub__grid {
+  margin: 0 0 clamp(20px, 3vw, 32px);
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.cg-info-hub__card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  height: auto;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid var(--cg-line-soft, var(--cg-line));
+  background: var(--cg-surface);
+  color: inherit;
+  text-decoration: none;
+}
+
+.cg-info-hub__card:hover {
+  border-color: color-mix(in srgb, var(--cg-link) 35%, var(--cg-line));
+}
+
+.cg-info-hub__card-title {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  color: var(--cg-ink);
+  font-size: var(--cg-type-card-title);
+  font-weight: var(--cg-type-card-title-weight);
+  line-height: 1.35;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+.cg-info-hub__card-desc {
+  display: none;
+  color: var(--cg-muted);
+  font-size: var(--cg-type-caption);
+  line-height: 1.4;
+}
+
+.cg-info-hub__faq {
+  margin: 0 0 clamp(18px, 2.8vw, 28px);
+  padding: clamp(14px, 2.4vw, 20px);
+  border: 1px solid var(--cg-line-soft, var(--cg-line));
+  border-radius: 12px;
+  background: var(--cg-surface);
+}
+
+.cg-info-hub__faq h2 {
+  margin: 0 0 6px;
+  color: var(--cg-ink);
+  font-size: var(--cg-type-h4);
+  font-weight: var(--fw-bold);
+  line-height: var(--cg-type-h4-lh);
+  word-break: keep-all;
+}
+
+.cg-info-hub__faq .cg-faq-item__trigger {
+  padding: 10px 4px;
+}
+
+.cg-info-hub__faq .cg-faq-item__q {
+  font-size: var(--cg-type-card-body);
+}
+
+.cg-info-hub__back {
+  margin: 0;
+}
+
+.cg-info-hub__back a {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  color: var(--cg-link);
+  font-weight: 600;
+}
+
+@media (min-width: 640px) {
+  .cg-info-hub__card-desc {
+    display: block;
+  }
+}
+
+@media (min-width: 900px) {
+  .cg-info-hub {
+    padding-top: 28px;
   }
 
-  .cg-info-guide__first-check .cg-key-summary__num,
-  .cg-info-guide__first-check .cg-key-summary__title,
-  .cg-info-guide__first-check .cg-key-summary__text {
-    grid-area: auto;
+  .cg-info-hub__h1 {
+    font-size: var(--cg-type-h1);
+    line-height: var(--cg-type-h1-lh);
+  }
+
+  .cg-info-hub__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .cg-info-hub__card {
+    padding: 16px;
   }
 }

@@ -5,9 +5,12 @@ import { Breadcrumb } from "@/components/content/Breadcrumb";
 import { FaqAccordion } from "@/components/content/FaqList";
 import { KeySummaryCards } from "@/components/content/KeySummaryCards";
 import { OfficialSources } from "@/components/content/OfficialSources";
+import { SectionTocCards } from "@/components/content/PageTocCards";
+import { RelatedInfoGuides } from "@/components/content/RelatedInfoGuides";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { ROUTES } from "@/config/routes";
 import { SITE } from "@/config/site";
+import { getRelatedInfoGuides } from "@/content/info-guides";
 import {
   articleJsonLdFromFields,
   breadcrumbJsonLd,
@@ -35,6 +38,14 @@ function formatDisplayDate(iso: string): string {
  */
 export function InfoGuideTemplate({ guide }: InfoGuideTemplateProps) {
   assertOfficialSources(guide);
+
+  const tocItems = guide.sections.map((section) => ({
+    id: section.id,
+    numberLabel: section.numberLabel,
+    label: section.heading,
+  }));
+
+  const relatedGuides = getRelatedInfoGuides(guide);
 
   const schemas = [
     webPageJsonLd({
@@ -73,12 +84,18 @@ export function InfoGuideTemplate({ guide }: InfoGuideTemplateProps) {
 
           <div className="cg-info-guide__reading">
             <header className="cg-info-guide__header">
-              <p className="cg-info-guide__eyebrow">{guide.categoryLabel}</p>
+              <p className="cg-info-guide__eyebrow">제휴 의료기관</p>
               <h1 className="cg-info-guide__h1">{guide.h1}</h1>
               <p className="cg-info-guide__dates">
-                <span>발행 {formatDisplayDate(guide.publishedAt)}</span>
-                <span aria-hidden="true"> · </span>
-                <span>수정 {formatDisplayDate(guide.updatedAt)}</span>
+                {guide.updatedAt !== guide.publishedAt ? (
+                  <>
+                    <span>발행 {formatDisplayDate(guide.publishedAt)}</span>
+                    <span aria-hidden="true"> · </span>
+                    <span>수정 {formatDisplayDate(guide.updatedAt)}</span>
+                  </>
+                ) : (
+                  <span>발행 {formatDisplayDate(guide.publishedAt)}</span>
+                )}
               </p>
             </header>
 
@@ -95,6 +112,10 @@ export function InfoGuideTemplate({ guide }: InfoGuideTemplateProps) {
               />
             </div>
 
+            <div className="cg-info-guide__toc">
+              <SectionTocCards title="이 페이지의 목차" items={tocItems} />
+            </div>
+
             <div className="cg-info-guide__body" data-article-body="true">
               <ArticleBody sections={guide.sections} />
 
@@ -102,9 +123,10 @@ export function InfoGuideTemplate({ guide }: InfoGuideTemplateProps) {
                 items={guide.faqs}
                 title={guide.faqTitle}
                 id="faq"
-                numberLabel="08"
                 className="cg-info-guide__faq"
               />
+
+              <RelatedInfoGuides guides={relatedGuides} />
 
               <nav
                 className="cg-info-guide__related"

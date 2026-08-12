@@ -1,6 +1,6 @@
 import type { ContentClusterId } from "@/types/content";
 
-export type MenuIconKey = ContentClusterId | "home";
+export type MenuIconKey = ContentClusterId | "home" | "infoHub";
 
 type MenuIconProps = {
   iconKey: MenuIconKey;
@@ -75,6 +75,13 @@ export function MenuIcon({ iconKey, size = 20, className }: MenuIconProps) {
           <circle cx="12" cy="12" r="9" />
           <path d="M9.5 9a2.5 2.5 0 0 1 4.5 1.5c0 1.5-2 2-2 3.5" />
           <path d="M12 17h.01" strokeWidth={2.2} />
+        </svg>
+      );
+    case "infoHub":
+      return (
+        <svg {...props}>
+          <path d="M6 4h9l3 3v13H6z" />
+          <path d="M9 9h6M9 13h6M9 17h4" />
         </svg>
       );
     default:

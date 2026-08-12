@@ -1,13 +1,26 @@
 import Link from "next/link";
 
-import { INFO_GUIDE_PREVIEWS } from "@/content/info-guides";
+import { ROUTES } from "@/config/routes";
+import { INFO_GUIDES } from "@/content/info-guides";
+
+/** 메인에 노출할 대표 정보가이드 id (최대 4개) */
+const HOME_INFO_LAYER_IDS = [
+  "consultation-checklist",
+  "consultation-questions",
+  "after-symptoms",
+  "retouch-timing",
+];
 
 /**
  * 홈: 기존 핵심 카드 직후, 다음 주요 콘텐츠 전에 표시하는 정보 레이어.
- * GNB·핵심 카드 배열에는 포함하지 않는다.
+ * GNB·핵심 카드 배열에는 포함하지 않는다. 전체 목록은 /의료정보 허브에서 확인한다.
  */
 export function InfoGuideLayer() {
-  if (INFO_GUIDE_PREVIEWS.length === 0) return null;
+  const previews = HOME_INFO_LAYER_IDS.map((id) =>
+    INFO_GUIDES.find((guide) => guide.id === id),
+  ).filter((guide): guide is NonNullable<typeof guide> => Boolean(guide));
+
+  if (previews.length === 0) return null;
 
   return (
     <section className="cg-info-layer" aria-labelledby="info-layer-title">
@@ -20,11 +33,15 @@ export function InfoGuideLayer() {
         </p>
       </div>
       <ul className="cg-info-layer__list">
-        {INFO_GUIDE_PREVIEWS.map((item) => (
-          <li key={item.href}>
-            <Link href={item.href} className="cg-info-layer__card">
-              <span className="cg-info-layer__card-title">{item.title}</span>
-              <span className="cg-info-layer__card-desc">{item.description}</span>
+        {previews.map((guide) => (
+          <li key={guide.href}>
+            <Link href={guide.href} className="cg-info-layer__card">
+              <span className="cg-info-layer__card-title">
+                {guide.preview.title}
+              </span>
+              <span className="cg-info-layer__card-desc">
+                {guide.preview.description}
+              </span>
               <span className="cg-info-layer__card-more" aria-hidden="true">
                 자세히 보기 →
               </span>
@@ -32,6 +49,9 @@ export function InfoGuideLayer() {
           </li>
         ))}
       </ul>
+      <Link href={ROUTES.infoHub} className="cg-info-layer__all">
+        골반필러 의료정보 전체보기 →
+      </Link>
     </section>
   );
 }

@@ -1,12 +1,12 @@
 import type { ClayAccent, ContentClusterId } from "@/types/content";
 
 export type MenuItemConfig = {
-  id: ContentClusterId | "home";
+  id: ContentClusterId | "home" | "infoHub";
   order: number;
   numberLabel: string;
   title: string;
   description: string;
-  iconKey: ContentClusterId | "home";
+  iconKey: ContentClusterId | "home" | "infoHub";
   accent: ClayAccent;
   href?: string;
 };
@@ -96,6 +96,16 @@ export const topicConfig = {
       description: "가격, 통증, 붓기, 운동, 제거 관련 질문 정리",
       iconKey: "faq",
       accent: "neutral",
+    },
+    {
+      id: "infoHub",
+      order: 7,
+      numberLabel: "07",
+      title: "의료정보",
+      description: "상담·시술·회복·경과·안전 주제별 의료정보 가이드",
+      iconKey: "infoHub",
+      accent: "neutral",
+      href: "/의료정보",
     },
   ] satisfies MenuItemConfig[],
   keywordMap: {

@@ -47,6 +47,8 @@ export type InfoGuide = {
   faqs: FaqItem[];
   faqTitle: string;
   relatedLinks: InfoGuideRelatedLink[];
+  /** "다른 골반필러 의료정보" 카드에 우선 노출할 InfoGuide id (선택) */
+  relatedSlugs?: string[];
   medicalNotice: string;
   /**
    * 공식 출처 — 신규 InfoGuide에서는 최소 1개 이상 필수.

@@ -1,3 +1,4 @@
+import { ROUTES } from "@/config/routes";
 import { getFaqsByIds } from "@/content/faqs";
 import { INFO_GUIDES } from "@/content/info-guides";
 import {
@@ -30,5 +31,6 @@ export function getPublicUrls(): string[] {
   return [
     ...ALL_PAGE_HREFS,
     ...INFO_GUIDES.map((guide) => guide.href),
+    ROUTES.infoHub,
   ];
 }

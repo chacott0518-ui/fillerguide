@@ -19,6 +19,7 @@ const ACCENT_COLORS: Record<string, string> = {
   hospital:   "#D9EEE7",
   recovery:   "#E9E0F5",
   faq:        "#F7EDC9",
+  infoHub:    "#E4EEF7",
 };
 
 function resolveMenuHref(id: string, href?: string): string {
