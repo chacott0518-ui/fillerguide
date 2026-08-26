@@ -51,14 +51,6 @@ export default function HomePage() {
     <>
       <div className="cg-home cg-page--enter">
         <div className="cg-container">
-          <HomeContentCards />
-
-          <InfoGuideLayer />
-
-          <div className="cg-article-mid-cta">
-            <PartnershipCTA variant="top" />
-          </div>
-
           {heroImage?.src ? (
             <section className="cg-home-hero" aria-labelledby="home-hero-title">
               <Image
@@ -80,6 +72,28 @@ export default function HomePage() {
             </section>
           ) : null}
 
+          <header className="cg-page__header cg-home__header">
+            <h2 className="cg-home__question">{HOME_INTRO.heading}</h2>
+          </header>
+
+          <section className="cg-home-lead">
+            {HOME_INTRO.paragraphs.map((p) => (
+              <p key={p.slice(0, 48)}>{p}</p>
+            ))}
+          </section>
+
+          {HOME_INTRO.keySummary ? (
+            <KeySummaryCards items={HOME_INTRO.keySummary} />
+          ) : null}
+
+          <HomeContentCards />
+
+          <InfoGuideLayer />
+
+          <div className="cg-article-mid-cta">
+            <PartnershipCTA variant="top" />
+          </div>
+
           <section className="cg-editorial-grid" aria-label="골반필러 보조 이미지">
             {editorialImages.map((image) => (
               <figure key={image.src} className="cg-editorial-grid__item">
@@ -96,20 +110,6 @@ export default function HomePage() {
           </section>
 
           <ClinicMap />
-
-          <header className="cg-page__header cg-home__header">
-            <h2 className="cg-home__question">{HOME_INTRO.heading}</h2>
-          </header>
-
-          <section className="cg-home-lead">
-            {HOME_INTRO.paragraphs.map((p) => (
-              <p key={p.slice(0, 48)}>{p}</p>
-            ))}
-          </section>
-
-          {HOME_INTRO.keySummary ? (
-            <KeySummaryCards items={HOME_INTRO.keySummary} />
-          ) : null}
 
           <PageTocCards items={HOME_TOC} />
 

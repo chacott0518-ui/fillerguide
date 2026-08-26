@@ -14,11 +14,11 @@ export const CAUTION_PAGE: ContentPage = {
   h1: "골반필러 시술 전후 무엇을 주의해야 할까요?",
   heading: "골반필러 시술 전후 무엇을 주의해야 할까요?",
   intro: [
-    "골반필러는 시술 전 제품과 허가사항, 복용 약, 건강 상태, 피부 상태를 충분히 설명한 뒤 진행 여부를 판단하는 편이 좋습니다.",
+    "골반필러는 시술 전 제품과 허가사항, 복용 약, 건강 상태, 피부 상태를 충분히 설명한 뒤 진행 여부를 판단하는 편이 좋습니다. 골반 필러 주의사항과 부작용을 확인할 때도 일반적인 반응과 이상 징후를 구분해 안내받는 것이 중요합니다.",
     "시술 후에는 붓기, 멍, 통증, 눌림감처럼 일반적으로 나타날 수 있는 반응과 빠르게 확인이 필요한 이상 징후를 구분해 안내받아야 합니다.",
   ],
   publishedAt: "2026-07-28",
-  updatedAt: "2026-07-28",
+  updatedAt: "2026-08-26",
   faqIds: ["caution-01", "caution-02", "caution-03", "caution-04"],
   faqTitle: "골반필러 주의사항 FAQ",
   conclusion: [
@@ -54,7 +54,7 @@ export const CAUTION_PAGE: ContentPage = {
   seo: {
     title: "골반필러 시술 전후 무엇을 주의해야 할까요? | 필러가이드",
     description: "골반필러 시술 전후 확인사항, 예상 가능한 반응, 주의가 필요한 이상 징후와 제품 허가사항 확인 기준을 안내합니다.",
-    keywords: ["골반필러 주의사항", "골반필러 부작용", "바디필러 주의사항"],
+    keywords: ["골반필러 주의사항", "골반 필러 주의사항", "골반필러 부작용", "골반 필러 부작용"],
     ogImage: TOPIC_MEDIA.precautions.thumbnail.src,
     socialImage: TOPIC_MEDIA.precautions.thumbnail.src,
     category: SITE.categoryLabel,
@@ -102,13 +102,18 @@ export const CAUTION_PAGE: ContentPage = {
       layout: "info-grid",
       directAnswer:
         "멍, 붓기, 압통, 단단한 촉감이나 눌림감은 시술 후 일정 기간 느껴질 수 있으나 정도와 지속 기간은 개인차가 있습니다.",
-      paragraphs: ["정상 범위를 스스로 단정하기보다 안내받은 경과 설명과 비교하는 편이 좋습니다."],
+      paragraphs: [
+        "정상 범위를 스스로 단정하기보다 안내받은 경과 설명과 비교하는 편이 좋습니다.",
+        "좌우가 다르게 보이거나 표면이 고르지 않게 느껴지는 경우에도, 원인·의미를 사이트에서 진단처럼 단정하지 않으며 경과와 함께 의료기관에서 확인하는 편이 좋습니다.",
+      ],
       infoBlocks: [
         { label: "붓기", text: "초기 부기 변화는 개인차가 있습니다." },
         { label: "멍", text: "색과 범위가 서서히 달라질 수 있습니다." },
         { label: "압통", text: "눌렀을 때 민감함이 느껴질 수 있습니다." },
         { label: "촉감", text: "단단함이나 이물감이 일시적으로 느껴질 수 있습니다." },
       ],
+      relatedHref: ROUTES.leftRightDifference,
+      relatedLabel: "좌우 차이 확인 항목 보기",
     },
     {
       id: "caution-alert",
@@ -122,8 +127,8 @@ export const CAUTION_PAGE: ContentPage = {
         "초음파는 주변 구조와 주입층 확인을 위한 보조수단으로 활용될 수 있지만 안전을 보장하는 표현으로 이해하면 안 됩니다.",
       ],
       callout: "이상 징후가 의심되면 온라인 후기보다 시술 의료기관의 안내와 진료를 우선하세요.",
-      relatedHref: ROUTES.hospital,
-      relatedLabel: "골반필러 병원선택 기준 보기",
+      relatedHref: ROUTES.afterSymptoms,
+      relatedLabel: "시술 후 이상증상 확인 항목 보기",
     },
   ],
 };

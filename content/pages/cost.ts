@@ -14,12 +14,12 @@ export const COST_PAGE: ContentPage = {
   h1: "골반필러 가격과 비용은 어떻게 결정될까요?",
   heading: "골반필러 가격과 비용은 어떻게 결정될까요?",
   intro: [
-    "골반필러 가격은 제품과 성분, 예상 주입량, 시술 범위, 사후관리 구성에 따라 달라질 수 있습니다. 힙딥필러나 엉덩이필러처럼 비슷하게 보이는 표현도 실제 범위가 다르면 견적 비교 기준이 달라집니다.",
+    "골반필러 가격은 제품과 성분, 예상 주입량, 시술 범위, 사후관리 구성에 따라 달라질 수 있습니다. 골반 필러 가격·비용을 비교할 때도 힙딥필러나 엉덩이필러처럼 비슷하게 보이는 표현이면 실제 범위가 다른지부터 확인하는 편이 좋습니다.",
     "광고 문구의 총액만 보기보다 양쪽 합산 용량인지, 추가 비용과 사후 경과 확인이 포함되는지까지 함께 확인하는 편이 좋습니다.",
   ],
   publishedAt: "2026-07-28",
-  updatedAt: "2026-07-28",
-  faqIds: ["cost-01", "cost-02", "cost-03", "cost-04"],
+  updatedAt: "2026-08-26",
+  faqIds: ["cost-01", "cost-02", "cost-03", "cost-04", "cost-05"],
   faqTitle: "골반필러 가격 FAQ",
   conclusion: [
     "골반필러 비용은 제품, 용량, 범위, 사후관리 구성에 따라 달라질 수 있으므로 단일 금액만으로 판단하기 어렵습니다.",
@@ -54,7 +54,14 @@ export const COST_PAGE: ContentPage = {
   seo: {
     title: "골반필러 가격과 비용은 어떻게 결정될까요? | 필러가이드",
     description: "골반필러 가격과 비용에 영향을 주는 제품, 성분, 예상 주입량, 시술 범위와 견적 확인 기준을 안내합니다.",
-    keywords: ["골반필러 가격", "골반필러 비용", "힙딥필러 가격", "바디필러 가격"],
+    keywords: [
+      "골반필러 가격",
+      "골반 필러 가격",
+      "골반필러 비용",
+      "골반 필러 비용",
+      "골반필러 용량",
+      "골반필러 1cc",
+    ],
     ogImage: TOPIC_MEDIA.cost.thumbnail.src,
     socialImage: TOPIC_MEDIA.cost.thumbnail.src,
     category: SITE.categoryLabel,
@@ -89,7 +96,7 @@ export const COST_PAGE: ContentPage = {
         "비용 설명에서는 제품명과 성분, 허가된 사용목적, 예상 용량과 범위를 함께 확인해야 실제 비교가 가능합니다.",
       paragraphs: [
         "단순히 몇 cc인지보다 어느 부위에 어떻게 나눠 주입하는지, 양쪽 합산인지 편측 기준인지까지 확인해야 해석이 쉬워집니다.",
-        "바디필러, 힙필러, Hip filler 같은 표현이 함께 사용되더라도 실제 계획은 의료진 설명을 기준으로 구분하는 편이 좋습니다.",
+        "바디필러, 힙필러처럼 비슷한 표현이 함께 쓰여도 실제 계획은 의료진 설명을 기준으로 구분하는 편이 좋습니다.",
       ],
       compareHeaders: ["확인할 표현", "함께 물어볼 내용"],
       compareRows: [
@@ -98,13 +105,34 @@ export const COST_PAGE: ContentPage = {
         { criterion: "범위", left: "골반 측면 또는 힙딥", right: "주입 범위 설명 방식" },
         { criterion: "사후관리", left: "경과 확인 포함 여부", right: "추가 방문 비용 조건" },
       ],
-      relatedHref: ROUTES.recovery,
-      relatedLabel: "골반필러 유지 및 회복기간 보기",
+      relatedHref: ROUTES.productIngredientCheck,
+      relatedLabel: "골반필러 제품·성분 확인 기준 보기",
+    },
+    {
+      id: "cost-cc-price",
+      order: 3,
+      numberLabel: "03",
+      heading: "1cc 가격만으로 견적을 비교해도 되나요?",
+      layout: "checklist",
+      directAnswer:
+        "1cc 가격이나 cc당 단가만으로는 총비용과 계획을 충분히 비교하기 어렵습니다. 총용량·양쪽 합산 여부·시술 범위와 포함 항목을 함께 봐야 합니다.",
+      paragraphs: [
+        "골반필러 몇 cc가 필요한지는 체형과 목표 범위, 제품 특성에 따라 달라질 수 있어 사이트에서 권장 수치를 단정하지 않습니다.",
+        "견적에서는 편측인지 양쪽 합산 용량인지, 총용량 기준인지, 추가 비용이 있는지까지 같은 기준으로 맞춰 비교하는 편이 좋습니다.",
+      ],
+      bullets: [
+        "1cc·cc당 단가만 보고 총액을 추정하지 않았는지",
+        "예상 총용량과 양쪽 합산 여부를 확인했는지",
+        "시술 범위가 견적에 명확히 포함됐는지",
+        "제품·성분과 사후관리 포함 여부를 같이 봤는지",
+      ],
+      relatedHref: ROUTES.consultationChecklist,
+      relatedLabel: "상담 전 확인사항 보기",
     },
     {
       id: "cost-before-compare",
-      order: 3,
-      numberLabel: "03",
+      order: 4,
+      numberLabel: "04",
       heading: "견적 비교 전에 체크할 항목은 무엇인가요?",
       layout: "checklist",
       directAnswer:
@@ -122,8 +150,8 @@ export const COST_PAGE: ContentPage = {
     },
     {
       id: "cost-consult-check",
-      order: 4,
-      numberLabel: "04",
+      order: 5,
+      numberLabel: "05",
       heading: "병원 상담 시 어떤 질문을 하면 좋을까요?",
       layout: "responsive-table",
       directAnswer:

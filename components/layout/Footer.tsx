@@ -21,10 +21,7 @@ export function Footer() {
   return (
     <footer className="cg-footer">
       <div className="cg-container">
-        <p className="cg-footer__copy">
-          © 2026 {topicConfig.logoText}. {topicConfig.operatorName}
-        </p>
-        <p className="cg-footer__webblog">Web Blog.</p>
+        <p className="cg-footer__copy">© 2026 {topicConfig.siteName}</p>
         <HealthInformationNotice variant="footer" />
         {enabledLinks.length > 0 ? (
           <nav className="cg-footer__legal" aria-label="법률 문서">

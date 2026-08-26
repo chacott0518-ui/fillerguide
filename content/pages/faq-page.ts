@@ -18,7 +18,7 @@ export const FAQ_PAGE: ContentPage = {
     "각 답변은 제품, 시술 방법, 개인 상태에 따라 달라질 수 있다는 점을 전제로 읽는 편이 좋습니다.",
   ],
   publishedAt: "2026-07-28",
-  updatedAt: "2026-07-28",
+  updatedAt: "2026-08-26",
   faqIds: [
     "main-01",
     "main-02",
@@ -69,7 +69,7 @@ export const FAQ_PAGE: ContentPage = {
   seo: {
     title: "골반필러에 대해 자주 묻는 질문은 무엇일까요? | 필러가이드",
     description: "골반필러 가격, 통증, 붓기, 운동, 앉기, 유지기간, 필러 제거와 병원선택에 관한 자주 묻는 질문을 정리합니다.",
-    keywords: ["골반필러 FAQ", "골반필러 자주 묻는 질문", "골반필러 제거"],
+    keywords: ["골반필러 FAQ", "골반필러 자주 묻는 질문", "골반필러 제거", "골반필러 지방이식"],
     ogImage: TOPIC_MEDIA.faq.thumbnail.src,
     socialImage: TOPIC_MEDIA.faq.thumbnail.src,
     category: SITE.categoryLabel,
@@ -85,13 +85,13 @@ export const FAQ_PAGE: ContentPage = {
         "가격과 주입량은 제품, 성분, 예상 용량, 범위와 사후관리 구성에 따라 달라질 수 있으므로 총액만으로 판단하기 어렵습니다.",
       paragraphs: ["자세한 비용 기준은 골반필러 가격 및 비용 페이지를 함께 확인하는 편이 좋습니다."],
       bullets: [
-        "양쪽 합산 용량인지",
+        "1cc·cc당 단가만으로 총액을 추정하지 않았는지",
+        "양쪽 합산 용량·총용량인지",
         "제품명과 성분 설명이 있는지",
-        "사후관리 포함 여부",
-        "추가 비용 조건",
+        "사후관리 포함 여부와 추가 비용 조건",
       ],
       relatedHref: ROUTES.cost,
-      relatedLabel: "골반필러 가격 및 비용 보기",
+      relatedLabel: "골반필러 가격·용량 자세히 보기",
     },
     {
       id: "faq-recovery",
@@ -100,11 +100,13 @@ export const FAQ_PAGE: ContentPage = {
       heading: "통증, 붓기, 운동과 회복 관련 질문",
       layout: "timeline",
       directAnswer:
-        "통증과 붓기, 운동 재개 시점은 제품과 개인 상태, 시술 범위에 따라 다를 수 있어 단계적으로 확인하는 편이 좋습니다.",
-      paragraphs: ["회복 흐름은 시술 직후, 초기 회복, 경과 관찰, 형태 평가 시점으로 나눠 이해하면 도움이 됩니다."],
+        "통증과 붓기, 앉기·운동 재개 시점은 제품과 개인 상태, 시술 범위에 따라 다를 수 있어 단계적으로 확인하는 편이 좋습니다.",
+      paragraphs: [
+        "회복 흐름은 시술 직후, 초기 회복, 경과 관찰, 형태 평가 시점으로 나눠 이해하면 도움이 됩니다. 리터치·재시술 상담은 안정화 이후를 기준으로 논의하는 경우가 많습니다.",
+      ],
       timeline: [
         { label: "시술 직후", text: "붓기와 압통, 촉감 변화를 관찰합니다." },
-        { label: "초기 회복", text: "운동과 열 자극, 압박을 조절합니다." },
+        { label: "초기 회복", text: "앉기·운동과 열 자극, 압박을 조절합니다." },
         { label: "경과 관찰", text: "부기 변화와 눌림감을 비교합니다." },
         { label: "형태 평가", text: "안정화 이후 다시 확인합니다." },
       ],

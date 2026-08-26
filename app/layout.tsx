@@ -45,6 +45,13 @@ export const metadata: Metadata = {
     absolute: HOME_SEO.title,
   },
 
+  alternates: {
+    canonical: "https://fillerguide.co.kr/",
+    types: {
+      "application/rss+xml": "https://fillerguide.co.kr/rss.xml",
+    },
+  },
+
   verification: {
     google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || undefined,
     other: {

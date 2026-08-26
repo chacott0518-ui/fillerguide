@@ -14,11 +14,12 @@ export const HOSPITAL_PAGE: ContentPage = {
   h1: "골반필러 병원은 어떤 기준으로 선택해야 할까요?",
   heading: "골반필러 병원은 어떤 기준으로 선택해야 할까요?",
   intro: [
-    "골반필러 병원선택에서는 화려한 전후 이미지보다 제품 정보, 주입 계획, 의료진 설명, 이상 반응 대응 체계를 함께 확인하는 편이 도움이 됩니다.",
+    "골반필러 병원선택에서는 화려한 전후 이미지보다 제품 정보, 주입 계획, 의료진 설명, 이상 반응 대응 체계를 함께 확인하는 편이 도움이 됩니다. 골반 필러 병원·병원선택을 비교할 때도 설명 체계와 사후 대응이 분명한지 보는 편이 좋습니다.",
+    "골반필러 잘하는 곳·추천처럼 검색해도, 이 사이트는 특정 병원을 순위화하거나 추천하지 않습니다. 확인해야 할 기준을 정리하는 정보만 제공합니다.",
     "초음파 장비 사용 여부는 주변 구조와 주입층 확인을 위한 보조 항목으로 참고할 수 있지만, 그 자체를 안전 보장 표현으로 이해하면 안 됩니다.",
   ],
   publishedAt: "2026-07-28",
-  updatedAt: "2026-07-28",
+  updatedAt: "2026-08-26",
   faqIds: ["hospital-01", "hospital-02", "hospital-03", "hospital-04"],
   faqTitle: "골반필러 병원선택 FAQ",
   conclusion: [
@@ -54,7 +55,7 @@ export const HOSPITAL_PAGE: ContentPage = {
   seo: {
     title: "골반필러 병원은 어떤 기준으로 선택해야 할까요? | 필러가이드",
     description: "골반필러 병원선택 시 제품 정보, 의료진 설명, 주입 계획, 이상 반응 대응과 사후관리 체계를 확인하는 기준을 안내합니다.",
-    keywords: ["골반필러 병원", "바디필러 병원", "골반필러 병원선택"],
+    keywords: ["골반필러 병원", "골반필러 병원선택", "골반 필러 병원", "골반 필러 병원선택"],
     ogImage: TOPIC_MEDIA.hospital.thumbnail.src,
     socialImage: TOPIC_MEDIA.hospital.thumbnail.src,
     category: SITE.categoryLabel,
@@ -75,6 +76,8 @@ export const HOSPITAL_PAGE: ContentPage = {
         "예상 주입 범위",
         "정품 확인 절차",
       ],
+      relatedHref: ROUTES.productIngredientCheck,
+      relatedLabel: "제품·성분 확인 기준 보기",
     },
     {
       id: "hospital-plan",
@@ -91,6 +94,8 @@ export const HOSPITAL_PAGE: ContentPage = {
         { label: "균형 계획", text: "좌우 차이를 어떻게 볼지 설명" },
         { label: "회복 안내", text: "활동과 압박 관련 주의점 설명" },
       ],
+      relatedHref: ROUTES.consultationQuestions,
+      relatedLabel: "상담 질문 예시 보기",
     },
     {
       id: "hospital-ultrasound",
@@ -112,7 +117,7 @@ export const HOSPITAL_PAGE: ContentPage = {
       layout: "responsive-table",
       directAnswer:
         "이상 반응 대응과 사후관리에서는 연락 방법, 경과 확인 일정, 정품·정량 확인 절차, 추가 방문 기준을 함께 확인하는 편이 좋습니다.",
-      paragraphs: ["골반필러 병원과 바디필러 병원을 비교할 때도 결국 사후 대응 체계가 분명한지가 중요한 기준이 됩니다."],
+      paragraphs: ["골반필러 병원선택에서는 사후 대응 체계가 분명한지가 중요한 기준이 됩니다."],
       table: {
         caption: "병원선택 확인 항목",
         mobileMode: "cards",
