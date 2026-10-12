@@ -133,7 +133,7 @@ export const RETOUCH_TIMING_GUIDE: InfoGuide = {
   ],
   faqTitle: "골반필러 재시술 상담 시점 FAQ",
   relatedLinks: [
-    { id: "hub", href: ROUTES.home, label: "골반필러 메인", anchor: "골반필러 전체 안내" },
+    { id: "hub", href: ROUTES.home, label: "골반필러 메인", anchor: "골반필러 종합 안내" },
     { id: "info-hub", href: ROUTES.infoHub, label: "의료정보 허브", anchor: "골반필러 의료정보 전체보기" },
     { id: "shape-observe", href: ROUTES.shapeChangeObservation, label: "모양 변화 관찰", anchor: "모양 변화 관찰 방법" },
     { id: "left-right", href: ROUTES.leftRightDifference, label: "좌우 차이 확인", anchor: "좌우 차이 확인 항목" },

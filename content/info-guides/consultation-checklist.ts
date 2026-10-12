@@ -255,7 +255,7 @@ export const CONSULTATION_CHECKLIST_GUIDE: InfoGuide = {
       id: "hub",
       href: ROUTES.home,
       label: "골반필러 메인",
-      anchor: "골반필러 종합 정보",
+      anchor: "골반필러 종합 안내",
     },
     {
       id: "cost",

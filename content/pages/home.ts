@@ -12,7 +12,8 @@ import type {
 export const HOME_SEO: PageSeo = {
   title: "골반필러 | 가격·후기·주의사항·병원선택 - 필러가이드",
   description:
-    "골반필러를 중심으로 힙딥필러·엉덩이필러 등 바디필러의 가격, 유지기간, 회복기간, 주의사항, 후기와 병원 선택 기준을 정리한 의료정보 가이드입니다.",
+    "골반필러 가격·후기·주의사항·병원선택·유지/회복기간을 한 페이지에서 정리합니다. 힙딥·골반 라인·좌우 차이와 FAQ를 안내합니다.",
+  /** NAVER CONTROLLED TEST: 대표·띄어쓰기·관련 바디 표현만 유지. Google 랭킹 신호로 주장하지 않음. */
   keywords: ["골반필러", "골반 필러", "힙딥필러", "엉덩이필러", "바디필러"],
   ogImage: "/images/og/pelvic-filler-og.png",
   socialImage: "/images/og/pelvic-filler-og.png",
@@ -25,9 +26,10 @@ export const HOME_INTRO: HomeIntro = {
   heading: "골반필러는 어떤 시술이며 무엇을 확인해야 할까요?",
   featureImage: HOME_FEATURE_IMAGE,
   paragraphs: [
+    "골반필러를 알아볼 때는 골반 라인, 힙딥, 좌우 차이, 제품·용량·주입 범위, 후기 사진 조건, 병원 선택 기준을 함께 확인하는 편이 좋습니다.",
     "골반필러는 골반 측면의 꺼짐이나 힙딥 부위의 볼륨·윤곽을 확인하려는 목적에서 검색되는 주입 시술을 가리키는 표현입니다. 검색에서는 골반 필러처럼 띄어 쓰기도 하고, 힙딥필러·힙필러처럼 비슷한 표현이 함께 쓰이기도 합니다.",
     "엉덩이필러나 바디필러 문맥으로 이어지기도 하지만, 실제 부위와 사용 가능 여부는 제품별 허가사항과 상담 내용에 따라 달라질 수 있습니다. 같은 말로 단정하지 않고 범위부터 구분하는 편이 좋습니다.",
-    "시술을 검토할 때는 원하는 윤곽과 좌우 차이, 시술 범위뿐 아니라 제품·주입 계획, 가격과 비용 구성, 주의사항과 부작용, 회복기간과 유지기간까지 함께 확인하는 편이 좋습니다.",
+    "시술을 검토할 때는 가격과 비용 구성, 주의사항과 부작용, 회복기간과 유지기간까지 함께 확인하는 편이 좋습니다. 필러가이드는 골반필러 상담 전 확인할 정보를 정리하며, 실제 시술 가능 여부와 적합성은 의료기관 상담을 통해 확인해야 합니다.",
   ],
   summary: "제품별 허가사항과 개인 상태, 시술 범위에 따라 확인할 내용이 달라질 수 있습니다.",
   keySummary: [
@@ -47,25 +49,32 @@ export const HOME_CONCLUSION = [
   "특정 결과를 보장하는 표현이나 고정된 유지기간 안내보다는, 본인 상태와 제품 특성에 맞춘 설명이 충분한지 살펴보는 편이 도움이 됩니다.",
 ];
 
+/** 06 FAQ 섹션 도입문 (실제 Q&A는 동일 섹션의 FAQ 아코디언에 포함) */
+export const HOME_FAQ_INTRO = [
+  "골반필러 FAQ에서는 통증, 이동감, 제거·녹이기 가능 여부, 지방이식과의 차이, 운동과 목욕, 병원선택 기준처럼 자주 묻는 질문을 묶어 확인하는 것이 효율적입니다.",
+  "하나의 답으로 모든 상황을 설명하기 어려우므로, 제품 특성과 본인 체형, 주입 범위에 따라 달라질 수 있다는 점을 함께 보아야 합니다.",
+];
+
 export const HOME_INDEX: HomeIndexItem[] = [
   { order: 1, numberLabel: "01", title: "골반필러 가격 및 비용", description: "가격·비용·용량과 견적 확인 기준", href: ROUTES.cost },
   { order: 2, numberLabel: "02", title: "골반필러 후기", description: "후기·전후사진 확인 기준", href: ROUTES.reviews },
-  { order: 3, numberLabel: "03", title: "골반필러 주의사항", description: "부작용·주의사항과 이상 징후 확인", href: ROUTES.precautions },
+  { order: 3, numberLabel: "03", title: "골반필러 주의사항 및 부작용", description: "부작용·주의사항과 이상 징후 확인", href: ROUTES.precautions },
   { order: 4, numberLabel: "04", title: "골반필러 병원선택", description: "병원선택 시 확인 기준", href: ROUTES.hospital },
   { order: 5, numberLabel: "05", title: "골반필러 유지 및 회복기간", description: "회복·유지·붓기·활동 재개 기준", href: ROUTES.recovery },
   { order: 6, numberLabel: "06", title: "골반필러 FAQ", description: "제거·리터치·지방이식 등 질문 정리", href: ROUTES.faq },
 ];
 
+/** 본문 목차 6개만. FAQ Q&A는 06 섹션에 포함하므로 07번 중복 금지. */
 export const HOME_TOC = [
   { id: "home-cost", numberLabel: "01", label: "골반필러 가격 및 비용", description: "가격을 볼 때 먼저 확인할 기준" },
   { id: "home-review", numberLabel: "02", label: "골반필러 후기", description: "전후 사진과 후기 문맥 읽기" },
   { id: "home-precautions", numberLabel: "03", label: "골반필러 주의사항 및 부작용", description: "시술 전후 확인할 점" },
   { id: "home-hospital", numberLabel: "04", label: "골반필러 병원선택", description: "제품과 설명 체계 확인" },
   { id: "home-recovery", numberLabel: "05", label: "골반필러 유지 및 회복기간", description: "고정값이 아닌 경과 흐름" },
-  { id: "home-faq", numberLabel: "06", label: "골반필러 FAQ", description: "자주 묻는 질문 핵심 정리" },
-  { id: "faq", numberLabel: "07", label: "골반필러 자주 묻는 질문", description: "통증, 붓기, 운동, 제거 관련 질문 정리" },
+  { id: "home-faq", numberLabel: "06", label: "골반필러 FAQ", description: "자주 묻는 질문과 답변" },
 ];
 
+/** 01~05 본문. 06 FAQ는 page.tsx에서 Q&A와 함께 렌더. */
 export const HOME_SECTIONS: ArticleSection[] = [
   {
     id: "home-cost",
@@ -86,7 +95,7 @@ export const HOME_SECTIONS: ArticleSection[] = [
       { label: "추가 비용", text: "사후관리, 재확인, 추가 처치가 포함되는지" },
     ],
     relatedHref: ROUTES.cost,
-    relatedLabel: "골반필러 가격·비용·용량 자세히 보기",
+    relatedLabel: "골반필러 가격 및 비용 자세히 보기",
   },
   {
     id: "home-review",
@@ -106,7 +115,7 @@ export const HOME_SECTIONS: ArticleSection[] = [
       { label: "사후 대응", text: "불편감 발생 시 어떤 대응을 받았는지 확인" },
     ],
     relatedHref: ROUTES.reviews,
-    relatedLabel: "골반필러 후기·전후사진 확인 기준 보기",
+    relatedLabel: "골반필러 후기 확인 기준 보기",
   },
   {
     id: "home-precautions",
@@ -130,7 +139,7 @@ export const HOME_SECTIONS: ArticleSection[] = [
       },
     },
     relatedHref: ROUTES.precautions,
-    relatedLabel: "골반필러 부작용·주의사항 확인하기",
+    relatedLabel: "골반필러 주의사항 확인하기",
   },
   {
     id: "home-hospital",
@@ -141,7 +150,7 @@ export const HOME_SECTIONS: ArticleSection[] = [
     directAnswer:
       "골반필러 병원선택에서는 과한 전후 비교보다 제품 정보 확인, 설명 체계, 이상 반응 대응 계획, 사후 경과 확인 절차를 함께 보는 편이 도움이 됩니다.",
     paragraphs: [
-      "잘하는 곳·추천 검색어로 들어와도 특정 병원을 순위화하지 않습니다. 초음파 장비 사용 여부는 보조 항목으로만 참고하고, 설명 방식을 함께 확인하세요.",
+      "검색어로 ‘잘하는 곳’이나 ‘추천’이 나와도 이 사이트는 특정 병원을 순위화하지 않습니다. 초음파 장비 사용 여부는 보조 항목으로만 참고하고, 설명 방식을 함께 확인하세요.",
     ],
     bullets: [
       "제품명과 허가된 사용목적을 설명하는지",
@@ -171,28 +180,7 @@ export const HOME_SECTIONS: ArticleSection[] = [
       { label: "형태 평가", text: "최종 형태 평가는 초기 붓기와 압통이 가라앉은 뒤 보는 편이 좋습니다." },
     ],
     relatedHref: ROUTES.recovery,
-    relatedLabel: "골반필러 회복·유지·붓기 확인하기",
-  },
-  {
-    id: "home-faq",
-    order: 6,
-    numberLabel: "06",
-    heading: "골반필러 FAQ",
-    layout: "checklist",
-    directAnswer:
-      "골반필러 FAQ에서는 통증, 이동감, 제거·녹이기 가능 여부, 지방이식과의 차이, 운동과 목욕, 병원선택 기준처럼 자주 묻는 질문을 묶어 확인하는 것이 효율적입니다.",
-    paragraphs: [
-      "하나의 답으로 모든 상황을 설명하기 어려우므로, 제품 특성과 본인 체형, 주입 범위에 따라 달라질 수 있다는 점을 함께 보아야 합니다.",
-    ],
-    bullets: [
-      "통증과 붓기는 어느 정도인지",
-      "마음에 들지 않을 때 제거·녹이기를 검토할 수 있는지",
-      "지방이식과 어떤 점이 다른지",
-      "운동, 목욕, 사우나는 언제부터 가능한지",
-      "리터치·재시술 상담은 언제 고려하는지",
-    ],
-    relatedHref: ROUTES.faq,
-    relatedLabel: "골반필러 FAQ 전체 보기",
+    relatedLabel: "골반필러 유지 및 회복기간 확인하기",
   },
 ];
 
@@ -211,6 +199,10 @@ export const HOME_FAQ_IDS = [
 
 export const CARD_PUBLISHED_AT = "2026.07.28";
 
+/**
+ * HOME 6카드 = ItemList 1:1.
+ * 순서: 가격 → 후기 → 주의사항 → 병원선택 → 유지·회복 → FAQ
+ */
 export const CONTENT_CARDS: ContentCard[] = [
   {
     id: "cost",
@@ -237,28 +229,28 @@ export const CONTENT_CARDS: ContentCard[] = [
     inlineImage: TOPIC_MEDIA.cost.thumbnail,
   },
   {
-    id: "recovery",
+    id: "reviews",
     order: 2,
     numberLabel: "02",
-    href: ROUTES.recovery,
-    slug: "골반필러-유지-회복기간",
-    title: "골반필러 유지 및 회복기간",
-    cardTitle: "골반필러 유지 및 회복기간",
-    shortTitle: "유지·회복기간",
-    cardMetaLabel: "유지·회복기간",
-    iconKey: "recovery",
-    description: "회복·유지·붓기와 활동 재개 기준",
-    cardDescription: "시술 직후부터 붓기·앉기·운동, 유지기간과 리터치·재시술 상담 시점을 순서대로 정리합니다.",
-    mobileCardDescription: TOPIC_MEDIA.recovery.mobileCardDescription,
-    accent: "pink",
-    accentColor: TOPIC_MEDIA.recovery.accentColor,
-    accentHoverColor: TOPIC_MEDIA.recovery.accentHoverColor,
+    href: ROUTES.reviews,
+    slug: "골반필러-후기",
+    title: "골반필러 후기",
+    cardTitle: "골반필러 후기",
+    shortTitle: "후기",
+    cardMetaLabel: "후기",
+    iconKey: "reviews",
+    description: "후기·전후사진 확인 기준",
+    cardDescription: "촬영 시점, 보정 여부, 용량·범위 표기, 광고 표시와 사후 대응 경험을 함께 읽는 기준을 정리합니다.",
+    mobileCardDescription: TOPIC_MEDIA.reviews.mobileCardDescription,
+    accent: "cyan",
+    accentColor: TOPIC_MEDIA.reviews.accentColor,
+    accentHoverColor: TOPIC_MEDIA.reviews.accentHoverColor,
     publishedAt: CARD_PUBLISHED_AT,
     categoryLabel: SITE.categoryLabel,
-    faqIds: ["recovery-01", "recovery-02", "recovery-03", "recovery-04", "recovery-05"],
-    image: TOPIC_MEDIA.recovery.thumbnail,
-    heroImage: TOPIC_MEDIA.recovery.thumbnail,
-    inlineImage: TOPIC_MEDIA.recovery.thumbnail,
+    faqIds: ["review-01", "review-02", "review-03", "review-04"],
+    image: TOPIC_MEDIA.reviews.thumbnail,
+    heroImage: TOPIC_MEDIA.reviews.thumbnail,
+    inlineImage: TOPIC_MEDIA.reviews.thumbnail,
   },
   {
     id: "precautions",
@@ -266,8 +258,8 @@ export const CONTENT_CARDS: ContentCard[] = [
     numberLabel: "03",
     href: ROUTES.precautions,
     slug: "골반필러-주의사항",
-    title: "골반필러 주의사항",
-    cardTitle: "골반필러 주의사항",
+    title: "골반필러 주의사항 및 부작용",
+    cardTitle: "골반필러 주의사항 및 부작용",
     shortTitle: "주의사항",
     cardMetaLabel: "주의사항",
     iconKey: "precautions",
@@ -309,28 +301,28 @@ export const CONTENT_CARDS: ContentCard[] = [
     inlineImage: TOPIC_MEDIA.hospital.thumbnail,
   },
   {
-    id: "reviews",
+    id: "recovery",
     order: 5,
     numberLabel: "05",
-    href: ROUTES.reviews,
-    slug: "골반필러-후기",
-    title: "골반필러 후기",
-    cardTitle: "골반필러 후기",
-    shortTitle: "후기",
-    cardMetaLabel: "후기",
-    iconKey: "reviews",
-    description: "후기·전후사진 확인 기준",
-    cardDescription: "촬영 시점, 보정 여부, 용량·범위 표기, 광고 표시와 사후 대응 경험을 함께 읽는 기준을 정리합니다.",
-    mobileCardDescription: TOPIC_MEDIA.reviews.mobileCardDescription,
-    accent: "cyan",
-    accentColor: TOPIC_MEDIA.reviews.accentColor,
-    accentHoverColor: TOPIC_MEDIA.reviews.accentHoverColor,
+    href: ROUTES.recovery,
+    slug: "골반필러-유지-회복기간",
+    title: "골반필러 유지 및 회복기간",
+    cardTitle: "골반필러 유지 및 회복기간",
+    shortTitle: "유지·회복기간",
+    cardMetaLabel: "유지·회복기간",
+    iconKey: "recovery",
+    description: "회복·유지·붓기와 활동 재개 기준",
+    cardDescription: "시술 직후부터 붓기·앉기·운동, 유지기간과 리터치·재시술 상담 시점을 순서대로 정리합니다.",
+    mobileCardDescription: TOPIC_MEDIA.recovery.mobileCardDescription,
+    accent: "pink",
+    accentColor: TOPIC_MEDIA.recovery.accentColor,
+    accentHoverColor: TOPIC_MEDIA.recovery.accentHoverColor,
     publishedAt: CARD_PUBLISHED_AT,
     categoryLabel: SITE.categoryLabel,
-    faqIds: ["review-01", "review-02", "review-03", "review-04"],
-    image: TOPIC_MEDIA.reviews.thumbnail,
-    heroImage: TOPIC_MEDIA.reviews.thumbnail,
-    inlineImage: TOPIC_MEDIA.reviews.thumbnail,
+    faqIds: ["recovery-01", "recovery-02", "recovery-03", "recovery-04", "recovery-05"],
+    image: TOPIC_MEDIA.recovery.thumbnail,
+    heroImage: TOPIC_MEDIA.recovery.thumbnail,
+    inlineImage: TOPIC_MEDIA.recovery.thumbnail,
   },
   {
     id: "faq",

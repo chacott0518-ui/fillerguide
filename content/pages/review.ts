@@ -47,7 +47,7 @@ export const REVIEW_PAGE: ContentPage = {
   ],
   hubContextLink: {
     before: "후기만으로 판단하지 말고 제품과 가격, 주의사항 및 회복 과정을 정리한 ",
-    anchor: "골반필러 안내",
+    anchor: "골반필러 종합 안내",
     after: "를 함께 확인하세요.",
     href: "/",
   },

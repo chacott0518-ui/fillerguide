@@ -26,7 +26,7 @@ const pretendard = localFont({
 const KAKAO_OG_IMAGE_URL =
   "https://fillerguide.co.kr/images/og/pelvic-filler-og.png";
 const KAKAO_OG_IMAGE_ALT =
-  "골반필러 가격·후기·주의사항·병원선택 필러가이드";
+  "골반필러 정보 안내 — 가격·후기·주의사항·병원선택 필러가이드";
 
 const baseMetadata = buildPageMetadata({
   seo: HOME_SEO,
@@ -44,6 +44,9 @@ export const metadata: Metadata = {
   title: {
     absolute: HOME_SEO.title,
   },
+
+  /** 메인 head/OG description의 단일 소스: HOME_SEO.description */
+  description: HOME_SEO.description,
 
   alternates: {
     canonical: "https://fillerguide.co.kr/",

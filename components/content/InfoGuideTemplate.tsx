@@ -84,7 +84,7 @@ export function InfoGuideTemplate({ guide }: InfoGuideTemplateProps) {
 
           <div className="cg-info-guide__reading">
             <header className="cg-info-guide__header">
-              <p className="cg-info-guide__eyebrow">제휴 의료기관</p>
+              <p className="cg-info-guide__eyebrow">골반필러 의료정보</p>
               <h1 className="cg-info-guide__h1">{guide.h1}</h1>
               <p className="cg-info-guide__dates">
                 {guide.updatedAt !== guide.publishedAt ? (

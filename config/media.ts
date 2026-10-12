@@ -46,20 +46,20 @@ export const TOPIC_MEDIA: Record<ContentClusterId, TopicMedia> = {
   },
   recovery: {
     id: "recovery",
-    imageAlt: "골반필러 유지 및 회복기간 안내 이미지",
-    secondaryImageAlt: "골반필러 유지 및 회복기간 본문 이미지",
+    imageAlt: "골반필러 유지 회복기간 안내 이미지",
+    secondaryImageAlt: "골반필러 유지 회복기간 본문 이미지",
     accentColor: "#876d3b",
     accentHoverColor: "#5f4c26",
     mobileCardDescription: "유지 및 회복 흐름 확인",
     thumbnail: img(
       `${BASE}/골반필러-유지회복기간.webp`,
-      "골반필러 유지 및 회복기간 안내 이미지",
+      "골반필러 유지 회복기간 안내 이미지",
       CARD_W,
       CARD_H,
     ),
     secondaryImage: img(
       `${BASE}/골반필러-유지회복기간.webp`,
-      "골반필러 유지 및 회복기간 본문 이미지",
+      "골반필러 유지 회복기간 본문 이미지",
       BODY_W,
       BODY_H,
     ),
@@ -106,20 +106,20 @@ export const TOPIC_MEDIA: Record<ContentClusterId, TopicMedia> = {
   },
   reviews: {
     id: "reviews",
-    imageAlt: "골반필러 후기 확인 안내 이미지",
-    secondaryImageAlt: "골반필러 후기 확인 본문 이미지",
+    imageAlt: "골반필러 후기 확인 기준 안내 이미지",
+    secondaryImageAlt: "골반필러 후기 확인 기준 본문 이미지",
     accentColor: "#c9824a",
     accentHoverColor: "#a66434",
     mobileCardDescription: "후기 확인 포인트 정리",
     thumbnail: img(
       `${BASE}/골반필러-후기.webp`,
-      "골반필러 후기 확인 안내 이미지",
+      "골반필러 후기 확인 기준 안내 이미지",
       CARD_W,
       CARD_H,
     ),
     secondaryImage: img(
       `${BASE}/골반필러-후기.webp`,
-      "골반필러 후기 확인 본문 이미지",
+      "골반필러 후기 확인 기준 본문 이미지",
       BODY_W,
       BODY_H,
     ),
@@ -168,14 +168,14 @@ export const TOPIC_MEDIA: Record<ContentClusterId, TopicMedia> = {
 
 export const HOME_FEATURE_IMAGE: ContentImage = img(
   `${BASE}/골반필러-메인썸네일.webp`,
-  "골반필러 메인 대표 이미지",
+  "골반필러 정보 안내 메인 대표 이미지",
   MAIN_W,
   MAIN_H,
 );
 
 export const HOME_OG_IMAGE: ContentImage = img(
   "/images/og/pelvic-filler-og.png",
-  "골반필러 필러가이드 공유 이미지",
+  "골반필러 정보 사이트 필러가이드 공유 이미지",
   1672,
   941,
 );

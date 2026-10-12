@@ -129,7 +129,7 @@ export const DESIRED_SHAPE_COMMUNICATION_GUIDE: InfoGuide = {
   ],
   faqTitle: "골반필러 원하는 모양 전달 FAQ",
   relatedLinks: [
-    { id: "hub", href: ROUTES.home, label: "골반필러 메인", anchor: "골반필러 전체 안내" },
+    { id: "hub", href: ROUTES.home, label: "골반필러 메인", anchor: "골반필러 종합 안내" },
     { id: "info-hub", href: ROUTES.infoHub, label: "의료정보 허브", anchor: "골반필러 의료정보 전체보기" },
     { id: "design", href: ROUTES.designConsultation, label: "디자인 상담", anchor: "디자인 상담 확인 항목" },
     { id: "questions", href: ROUTES.consultationQuestions, label: "상담 질문", anchor: "상담에서 확인할 질문" },

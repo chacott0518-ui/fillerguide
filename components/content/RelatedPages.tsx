@@ -30,7 +30,7 @@ export function RelatedPages({ currentId, showAll = false }: RelatedPagesProps) 
     links.push({
       id: "home",
       href: ROUTES.home,
-      label: "골반필러 메인 보기",
+      label: "골반필러 종합 안내",
     });
     for (const card of CONTENT_CARDS) {
       if (card.id === currentId) continue;

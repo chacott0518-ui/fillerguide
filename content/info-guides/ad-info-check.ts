@@ -131,7 +131,7 @@ export const AD_INFO_CHECK_GUIDE: InfoGuide = {
   ],
   faqTitle: "골반필러 광고 정보 확인 FAQ",
   relatedLinks: [
-    { id: "hub", href: ROUTES.home, label: "골반필러 메인", anchor: "골반필러 전체 안내" },
+    { id: "hub", href: ROUTES.home, label: "골반필러 메인", anchor: "골반필러 종합 안내" },
     { id: "info-hub", href: ROUTES.infoHub, label: "의료정보 허브", anchor: "골반필러 의료정보 전체보기" },
     { id: "medical-info", href: ROUTES.medicalInfoCheck, label: "의료정보 확인 방법", anchor: "의료정보 확인 방법" },
     { id: "product", href: ROUTES.productIngredientCheck, label: "제품·성분 확인", anchor: "제품·성분 확인 항목" },

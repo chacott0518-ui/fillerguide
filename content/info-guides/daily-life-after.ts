@@ -129,7 +129,7 @@ export const DAILY_LIFE_AFTER_GUIDE: InfoGuide = {
   ],
   faqTitle: "골반필러 시술 후 일상생활 FAQ",
   relatedLinks: [
-    { id: "hub", href: ROUTES.home, label: "골반필러 메인", anchor: "골반필러 전체 안내" },
+    { id: "hub", href: ROUTES.home, label: "골반필러 메인", anchor: "골반필러 종합 안내" },
     { id: "info-hub", href: ROUTES.infoHub, label: "의료정보 허브", anchor: "골반필러 의료정보 전체보기" },
     { id: "compression", href: ROUTES.compressionMassage, label: "압박·마사지", anchor: "압박·마사지 확인 항목" },
     { id: "after-symptoms", href: ROUTES.afterSymptoms, label: "시술 후 이상증상", anchor: "시술 후 이상증상 확인" },

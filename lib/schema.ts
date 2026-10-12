@@ -69,6 +69,7 @@ export function itemListJsonLd() {
     "@context": "https://schema.org",
     "@type": "ItemList",
     name: `${SITE.name} 주요 콘텐츠`,
+    numberOfItems: CONTENT_CARDS.length,
     itemListElement: CONTENT_CARDS.map((card, index) => ({
       "@type": "ListItem",
       position: index + 1,

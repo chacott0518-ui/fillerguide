@@ -48,7 +48,7 @@ export const HOSPITAL_PAGE: ContentPage = {
   ],
   hubContextLink: {
     before: "병원을 비교하기 전에 제품, 가격, 후기와 회복 기준을 정리한 ",
-    anchor: "골반필러 종합 정보",
+    anchor: "골반필러 종합 안내",
     after: "를 확인하세요.",
     href: "/",
   },

@@ -820,8 +820,29 @@ img {
 
 .cg-partner-cta__copy {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
   min-width: 0;
+}
+
+.cg-partner-cta__note {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.45;
+  color: var(--fg-partnership-text);
+  opacity: 0.88;
+  word-break: keep-all;
+}
+
+.cg-home-faq-more {
+  margin: 16px 0 0;
+}
+
+.cg-home-faq-more a {
+  font-weight: var(--fw-semibold);
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .cg-partner-cta__label {

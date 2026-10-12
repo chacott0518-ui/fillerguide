@@ -137,7 +137,7 @@ export const AFTER_SYMPTOMS_GUIDE: InfoGuide = {
   ],
   faqTitle: "골반필러 시술 후 이상증상 FAQ",
   relatedLinks: [
-    { id: "hub", href: ROUTES.home, label: "골반필러 메인", anchor: "골반필러 전체 안내" },
+    { id: "hub", href: ROUTES.home, label: "골반필러 메인", anchor: "골반필러 종합 안내" },
     { id: "info-hub", href: ROUTES.infoHub, label: "의료정보 허브", anchor: "골반필러 의료정보 전체보기" },
     { id: "precautions", href: ROUTES.precautions, label: "주의사항", anchor: "시술 전후 주의사항" },
     { id: "compression", href: ROUTES.compressionMassage, label: "압박·마사지", anchor: "압박·마사지 확인 항목" },

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import { PartnershipCTA } from "@/components/advertising/AdInquiryBanner";
 import { ArticleBody } from "@/components/content/ArticleBody";
@@ -12,13 +13,15 @@ import { RelatedPages } from "@/components/content/RelatedPages";
 import { ClinicMap } from "@/components/contact/ClinicMap";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { HOME_FEATURE_IMAGE } from "@/config/media";
-import { SITE } from "@/config/site";
+import { ROUTES } from "@/config/routes";
 import { getFaqsByIds } from "@/content/faqs";
 import {
   HOME_CONCLUSION,
   HOME_FAQ_IDS,
+  HOME_FAQ_INTRO,
   HOME_INTRO,
   HOME_SECTIONS,
+  HOME_SEO,
   HOME_TOC,
 } from "@/content/pages/home";
 import {
@@ -35,13 +38,13 @@ export default function HomePage() {
   const editorialImages = [
     {
       src: HOME_FEATURE_IMAGE.src,
-      alt: "골반필러 정보 요약 이미지 1",
+      alt: "골반필러 상담 전 확인할 정보 안내 이미지",
       width: HOME_FEATURE_IMAGE.width,
       height: HOME_FEATURE_IMAGE.height,
     },
     {
       src: "/images/pelvic-filler/골반필러-가격비용.webp",
-      alt: "골반필러 정보 요약 이미지 2",
+      alt: "골반필러 가격 확인 기준을 보여주는 안내 이미지",
       width: 800,
       height: 800,
     },
@@ -115,13 +118,21 @@ export default function HomePage() {
 
           <ArticleBody sections={HOME_SECTIONS} />
 
-          <FaqAccordion
-            items={faqs}
-            title="골반필러 자주 묻는 질문"
-            id="faq"
-            numberLabel="07"
-            className="cg-main-faq"
-          />
+          <section
+            id="home-faq"
+            className="cg-faq-section cg-article-section cg-main-faq"
+            aria-labelledby="home-faq-title"
+          >
+            <p className="cg-article-section__num">06</p>
+            <h2 id="home-faq-title">골반필러 FAQ</h2>
+            {HOME_FAQ_INTRO.map((paragraph) => (
+              <p key={paragraph.slice(0, 40)}>{paragraph}</p>
+            ))}
+            <FaqAccordion items={faqs} title="" id="home-faq-list" />
+            <p className="cg-home-faq-more">
+              <Link href={ROUTES.faq}>골반필러 FAQ 전체 보기</Link>
+            </p>
+          </section>
 
           <ArticleConclusion
             heading="골반필러를 검토할 때 마지막으로 확인할 점"
@@ -140,7 +151,7 @@ export default function HomePage() {
           websiteJsonLd(),
           webPageJsonLd({
             name: HOME_INTRO.h1,
-            description: SITE.tagline,
+            description: HOME_SEO.description,
             path: "/",
             image: heroImage?.src,
             type: "WebPage",

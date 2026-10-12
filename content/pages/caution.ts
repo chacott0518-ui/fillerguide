@@ -47,7 +47,7 @@ export const CAUTION_PAGE: ContentPage = {
   ],
   hubContextLink: {
     before: "가격과 유지기간, 후기 및 병원선택 기준을 정리한 ",
-    anchor: "골반필러 핵심 정보",
+    anchor: "골반필러 종합 안내",
     after: "도 함께 확인하세요.",
     href: "/",
   },

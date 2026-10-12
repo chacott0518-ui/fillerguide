@@ -47,7 +47,7 @@ export const RECOVERY_PAGE: ContentPage = {
   ],
   hubContextLink: {
     before: "제품과 용량, 가격, 시술 전후 주의사항은 ",
-    anchor: "골반필러 전체 안내",
+    anchor: "골반필러 종합 안내",
     after: "에서 함께 확인할 수 있습니다.",
     href: "/",
   },
